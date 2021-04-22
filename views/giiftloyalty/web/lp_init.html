@@ -1,0 +1,49 @@
+<h1>Issue and Initialize a loyalty program for a user</h1>
+<h2>Find an existing loyalty program</h2>
+<p>To find an existing loyalty program, use the method <a href="https://doc.giift.com/?urls.primaryName=Card" target="_blank"><code>card/lookup</code></a>    described <a href="#!/giiftloyalty/web/lp_query">here</a>.</p>
+<h2>Create a new loyalty program</h2>
+<p>A loyalty program is always attached to a user. So, a user should be lookedup and created if it does not exist yet.</p>
+<h3>User lookup</h3>
+<p>To look for a user, perform a GET request on the <a href="https://doc.giift.com/?urls.primaryName=User" target="_blank"><code>user/item</code></a>    method.</p>
+<p>The query parameter is as follow:</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>q</code></td>
+        <td>User's email or phone number.</td>
+    </tr>
+</table>
+<p>Result of this method is the list of users that match the query. Each user has an id parameter. This id should be used when
+    creating the program for the user.</p>
+<h3>Initialize a user</h3>
+<p>To initialize a new user, perform a POST request on the <a href="https://doc.giift.com/?urls.primaryName=User" target="_blank"><code>user/item</code></a>   method.</p>
+<p>The query parameter is as follow:</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>email</code></td>
+        <td>User's email.</td>
+    </tr>
+    <tr>
+        <td><code>first_name</code></td>
+        <td>User's first name.</td>
+    </tr>
+    <tr>
+        <td><code>last_name</code></td>
+        <td>User's last name.</td>
+    </tr>
+</table>
+<p>Result of this method is the newly created user. It has an id parameter. This id should be used when creating the program
+    for the user.</p>
+<h3>Create a program for a user.</h3>
+<p>To create a loyalty card for a user, we need a dmo id and a user id. The user id should have been found using the previous
+    steps. The list of available dmos can be found by a GET request to <a href="https://doc.giift.com/?urls.primaryName=Dmo" target="_blank"><code>dmo/all</code></a>.</p>
+<p>Now to initialize the loyalty card do a GET request to <a href="https://doc.giift.com/?urls.primaryName=Card" target="_blank"><code>card/new/&lt;dmo_id&gt;/&lt;user_id&gt;</code></a>.</p>
+<p>This will return a json representation of the card. This json object contains an id, that can then be used, to give points,
+    debit points, download the card as pdf...</p>

@@ -1,0 +1,54 @@
+<h1><a id="GiiftSDK_0"></a>Giift-SDK</h1>
+<h2><a id="For_users_2"></a>For users</h2>
+<h3><a id="Installation_3"></a>Installation</h3>
+<p>Add the following line to your Podfile:</p>
+<pre><code class="language-ruby">pod <span class="hljs-string">'Giift-SDK'</span>, <span class="hljs-symbol">:git</span> =&gt; git@bitbucket.org:giiftalldev/giiftsdk-ios-uat.git', <span class="hljs-symbol">:branch</span> =&gt; <span class="hljs-string">'1.x'</span>
+</code></pre>
+<h3><a id="Usage_11"></a>Usage</h3>
+<p>To run the project, clone the repo, run <code>pod install</code> from the ROOT directory first and open the Giift-SDK.xcworkspace.</p>
+<h5><a id="Swift_15"></a>Swift</h5>
+<ol>
+<li>Create a bridging header: &lt;app_name&gt;-Bridging-Header.h</li>
+<li>Link in build settings</li>
+</ol>
+<pre><code class="language-groovy">Target &gt; Build Settings &gt; Swift Compiler - General &gt; Objective-C Bridging Header &gt; dir/app_name-Bridging-Header.h
+</code></pre>
+<h3><a id="Requirements_22"></a>Requirements</h3>
+<p>iOS 9.0 and above</p>
+<h2><a id="Authors_26"></a>Authors</h2>
+<ul>
+<li>
+<p>Nicolas Lagier, nicolas.lagier@giift.com</p>
+</li>
+<li>
+<p>Eric Chang, eric.chang@giift.com</p>
+</li>
+<li>
+<p>Koh Chin Wee</p>
+</li>
+<li>
+<p>Jesse Tello</p>
+</li>
+</ul>
+<h2><a id="For_developers_34"></a>For developers</h2>
+<h3><a id="Environment_35"></a>Environment</h3>
+<p>There are two methods to declare your environment. This should be done in the AppDelegate.</p>
+<pre><code class="language-swift">    <span class="hljs-type">GIIManager</span>.sharedInstance.<span class="hljs-type">Environment</span> = <span class="hljs-type">PRODUCTION</span>;
+    <span class="hljs-comment">// OR</span>
+    <span class="hljs-type">GIIManager</span>.sharedInstance.baseURL = <span class="hljs-string">"your-base-NSURL"</span>;
+    <span class="hljs-type">GIIManager</span>.sharedInstance.assetURL = <span class="hljs-string">"your-asset-NSURL"</span>;
+
+    <span class="hljs-comment">//initialize giift api credentials</span>
+    <span class="hljs-type">WebServiceController</span>.sharedInstance.clientId = <span class="hljs-type">GIIFT_CLIENT_ID</span>;
+    <span class="hljs-type">WebServiceController</span>.sharedInstance.clientSecret = <span class="hljs-type">GIIFT_CLIENT_SECRET</span>;
+    <span class="hljs-type">WebServiceController</span>.sharedInstance.scopes = @[@<span class="hljs-string">"user"</span>,@<span class="hljs-string">"wallet"</span>,@<span class="hljs-string">"cart"</span>];
+</code></pre>
+<h3><a id="Build_48"></a>Build</h3>
+<p>Select Giift-SDKFramework target and build it.</p>
+<h3><a id="Test_51"></a>Test</h3>
+<p>Select GiiftTestingTests and test it.</p>
+<h2><a id="Document_54"></a>Document</h2>
+<p>Install <a href="https://github.com/tomaz/appledoc">Appledoc</a>.</p>
+<p>Run <code>appledoc --project-name Giift-SDK --project-company Giift.com Public</code></p>
+<h2><a id="License_59"></a>License</h2>
+<p>Copyright 2016 Gift Management Asia Pte Ltd</p>

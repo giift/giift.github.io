@@ -1,0 +1,231 @@
+<h1>Authentication</h1>
+
+<h2>Introduction</h2> Each request to the api must be authentified. The authentication system of Giift.com api follows the <a href="http://tools.ietf.org/html/rfc6749"
+	target="_blank">OAuth 2.0</a> standard. Giift.com implements the following authentication methods: <a href="#" anchor-scroll="auth_code" target="_self">authentication code</a>,
+<a href="#" anchor-scroll="client_credentials" target="_self">client credentials</a> and <a href="#" anchor-scroll="refresh_token" target="_self">refresh token</a>. Here is a summary of
+how it works.
+<h2>Get an access token</h2>
+<!-- Authentication code -->
+<h3 id="auth_code">Authentication Code</h3>
+<p>This grant type should be used by user facing applications, such as a web-app or a mobile app (iOS or android). Those applications
+	require a back-end server.</p>
+<h4>Obtain an authentication Code</h4>
+<p>First, redirect the user to the following url:
+	<pre>https://www.giift.com/app/oauth2?client_id=&lt;CLIENT ID&gt;&redirect_uri=&lt;REDIRECT URI&gt;&scope=&lt;SCOPES&gt;&response_type=code&state=&lt;STATE&gt;</pre></p>
+	<p>List of parameters:
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>client_id</code></td>
+			<td>Client id provided during registration to Giift.com developer account.</td>
+		</tr>
+		<tr>
+			<td><code>redirect_uri</code></td>
+			<td>The location the user should be returned to after they approve access for your app.</td>
+		</tr>
+		<tr>
+			<td><code>scope</code></td>
+			<td>The data your application is requesting access to. This is specified as space delimeted list. (See <a href="#" anchor-scroll="scopes" target="_self">Available scopes</a>)</td>
+		</tr>
+		<tr>
+			<td><code>response_type</code></td>
+			<td>Should always be <strong><code>code</code></strong>.</td>
+		</tr>
+		<tr>
+			<td><code>state</code></td>
+			<td>A unique value used by your application in order to prevent cross-site request
+forgery (CSRF) attacks on your implementation. The value should be a random
+unique string for this particular request, unguessable and kept secret in the client.</td>
+		</tr>
+	</table>
+</p>
+<p>Upon success the user should be redirected to a specific url</p>
+<h4>Exchange the authentication Code for an access token</h4>
+<p>Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Authorization" target="_blank"><code>https://sandbox.giift.com/api/auth/v1/oauth2/token</code></a>.</p>
+<p>Content-type sould be <code>x-www-form-urlencoded</code>.</p>
+<p>List of parameters:
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>client_id</code></td>
+			<td>Client id provided during registration to Giift.com developer account.</td>
+		</tr>
+		<tr>
+			<td><code>client_secret</code></td>
+			<td>Client secret provided during registration to Giift.com developer account.</td>
+		</tr>
+		<tr>
+			<td><code>grant_type</code></td>
+			<td>Should be <strong><code>authorization_code</code></strong> for this grant type.</td>
+		</tr>
+		<tr>
+			<td><code>code</code></td>
+			<td>Code obtained during the previous step.</td>
+		</tr>
+	</table>
+</p>
+<p>Sample response:
+	<pre>{
+  "access_token": "HkmtpSL7VHqgeWQLsaClNKWWmH6hU4Pv0oWz4R92",
+  "token_type": "Bearer",
+  "expires_in": 3600,
+  "refresh_token": "rhJoOV7OGWRn1Ydt1piOGh81bkQrIQTSw61l5a4A"
+}</pre> Response parameters:
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>access_token</code></td>
+			<td>Token that can be used to authorize API requests.</td>
+		</tr>
+		<tr>
+			<td><code>token_type</code></td>
+			<td>Always <code>Bearer</code> with Giift.com implementation.</td>
+		</tr>
+		<tr>
+			<td><code>expires_in</code></td>
+			<td>The remaining lifetime of the access token, in seconds.</td>
+		</tr>
+		<tr>
+			<td><code>refresh_token</code></td>
+			<td>Token that can be used to acquire a new access token.</td>
+		</tr>
+	</table>
+	When the <code>access_token</code> expires, a new one can be obtained using the <code>refresh_token</code> (See <a href="#" anchor-scroll="refresh_token" target="_self">Refresh token</a>).
+</p>
+<!--Client Credentials -->
+<h3 id="client_credentials">Client Credentials</h3>
+<p>This grant type is reserved to server-server interface.</p>
+<p>Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Authorization" target="_blank"><code>https://sandbox.giift.com/api/auth/v1/oauth2/token</code></a>.</p>
+<p>Content-type sould be <code>x-www-form-urlencoded</code>.</p>
+<p>List of parameters:
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>client_id</code></td>
+			<td>Client id provided during registration to Giift.com developer account.</td>
+		</tr>
+		<tr>
+			<td><code>client_secret</code></td>
+			<td>Client secret provided during registration to Giift.com developer account.</td>
+		</tr>
+		<tr>
+			<td><code>grant_type</code></td>
+			<td>Should be <strong><code>client_credentials</code></strong> for this grant type.</td>
+		</tr>
+		<tr>
+			<td><code>scope</code></td>
+			<td>The data your application is requesting access to. This is specified as space delimeted list. (See <a href="#" anchor-scroll="scopes" target="_self">Available scopes</a>)</td>
+		</tr>
+	</table>
+</p>
+<p>Sample response:
+	<pre>{
+  "access_token": "HkmtpSL7VHqgeWQLsaClNKWWmH6hU4Pv0oWz4R92",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}</pre> Response parameters:
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>access_token</code></td>
+			<td>Token that can be used to authorize API requests.</td>
+		</tr>
+		<tr>
+			<td><code>token_type</code></td>
+			<td>Always <code>Bearer</code> with Giift.com implementation.</td>
+		</tr>
+		<tr>
+			<td><code>expires_in</code></td>
+			<td>The remaining lifetime of the access token, in seconds.</td>
+		</tr>
+	</table>
+	When the <code>access_token</code> expires, a new one can be obtained using the same method.
+</p>
+<!--Refresh token-->
+<h3 id="refresh_token">Refresh an expired Token</h3>
+<p>When an access_token expires, a new access_token can be issued without user's permission using the refresh token.</p>
+<p>Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Authorization" target="_blank"><code>https://sandbox.giift.com/api/auth/v1/oauth2/token</code></a>.</p>
+<p>Content-type sould be <code>x-www-form-urlencoded</code>.</p>
+<p>List of parameters:
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>client_id</code></td>
+			<td>Client id provided during registration to Giift.com developer account.</td>
+		</tr>
+		<tr>
+			<td><code>client_secret</code></td>
+			<td>Client secret provided during registration to Giift.com developer account.</td>
+		</tr>
+		<tr>
+			<td><code>grant_type</code></td>
+			<td>Should be <strong><code>refresh_token</code></strong> for this grant type.</td>
+		</tr>
+		<tr>
+			<td><code>refresh_token</code></td>
+			<td>Value of the last refresh token obtained.</td>
+		</tr>
+	</table>
+</p>
+<p>Sample response:
+	<pre>{
+  "access_token": "HkmtpSL7VHqgeWQLsaClNKWWmH6hU4Pv0oWz4R92",
+  "token_type": "Bearer",
+  "expires_in": 3600,
+  "refresh_token": "rhJoOV7OGWRn1Ydt1piOGh81bkQrIQTSw61l5a4A"
+}</pre> Response parameters:
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>access_token</code></td>
+			<td>Token that can be used to authorize API requests.</td>
+		</tr>
+		<tr>
+			<td><code>token_type</code></td>
+			<td>Always <code>Bearer</code> with Giift.com implementation.</td>
+		</tr>
+		<tr>
+			<td><code>expires_in</code></td>
+			<td>The remaining lifetime of the access token, in seconds.</td>
+		</tr>
+		<tr>
+			<td><code>refresh_token</code></td>
+			<td>Token that can be used to acquire a new access_token.</td>
+		</tr>
+	</table>
+	When the access_token expires, a new one can be obtained using the refresh_token (See <a href="#" anchor-scroll="refresh_token" target="_self">Refresh token</a>).
+</p>
+<h2>Using the token</h2>
+<p>For each request, the access token must be attached. Giift.com supports two ways to attach the token to a request: as a url
+	query parameter or as a header.</p>
+<h3>Query parameter</h3>
+<p>Add the token as a query parameter called <code>access_token</code>.</p>
+<p><strong>Example:</strong> To query the list of cards, that the current user can read, use the following url:<br/>
+	<pre>https://sandbox.giift.com/api/card/v1/card/all?access_token=&lt;ACCESS TOKEN&gt;</pre></p>
+<h3>Header parameter</h3>
+<p>Add the header as a header of the http request. <code>Authorization: Bearer &lt;ACCESS TOKEN&gt;</code></p>
+<p><strong>Example:</strong> To query the list of cards with curl:<br/>
+	<pre>curl -H 'Authorization: Bearer &lt;ACCESS TOKEN&gt;' "https://sandbox.giift.com/api/card/v1/card/all"</pre></p>
+<h2 id="scopes">Available scopes</h2>
+<p><b>Coming soon.</b> If you need it urgently, please <a href="mailto:development@giift.com">contact us</a>.</p>

@@ -1,0 +1,357 @@
+<h1>
+	Buy Top up for Miles/Points Account
+</h1>
+<p>
+	As for any object in giift.com, in order to purchase points or miles for a user account, you must first retrieve the details of the program. How much per point? How many points maximum? Can I buy in bucket or per unit?
+</p>
+<p>
+  This information is found in the buyables list similarly to what is done in Gift Cards or Merchandises. Let's review the following example:
+</p>
+<pre>
+{
+		"underlying_id": "1234567890xyz",
+		"type": "topup",
+		"name": "Airlines",
+		"imgs": [
+			"https://d16a8a62orsrve.cloudfront.net/assets/img/card_tpl/135168690333uticy.png"
+		],
+		"units": [{
+				"type": "fixed",
+				"value": 1000,
+				"price": 20,
+				"unit": "usd"
+			},
+			{
+				"type": "fixed",
+				"value": 2000,
+				"price": 40,
+				"unit": "usd"
+			},
+			{
+				"type": "fixed",
+				"value": 3000,
+				"price": 60,
+				"unit": "usd"
+			},
+			{
+				"type": "fixed",
+				"value": 4000,
+				"price": 80,
+				"unit": "usd"
+			},
+			{
+				"type": "fixed",
+				"value": 5000,
+				"price": 100,
+				"unit": "usd"
+			}
+		],
+		"bonus": null,
+		"fees": null,
+		"tc": null,
+		"description": "",
+		"country": null,
+		"categories": [
+			"Airlines"
+		]
+}
+</pre>
+<p> In this example, you will get 1000 miles/points by paying 20 USD. In this example you can only buy a set of fixed amount of points/miles.
+</p>
+<p> In the following example we area looking at a more flexible set of values.
+</p>
+<pre>
+	{
+			"underlying_id": "1234567890xyz",
+			"type": "topup",
+			"name": "Airlines",
+			"imgs": [
+				"https://d16a8a62orsrve.cloudfront.net/assets/img/card_tpl/135168690333uticy.png"
+			],
+			"units": [{
+				"type": "variable",
+				"min": 20,
+				"max": 100,
+				"step": 1,
+				"unitPrice": 0.02,
+				"unit": "usd"
+			}],
+			"bonus": null,
+			"fees": null,
+			"tc": null,
+			"description": "",
+			"country": null,
+			"categories": [
+				"Airlines"
+			]
+	}
+</pre>
+<p> All values are actual usd amount and it reads as follow.
+	<ol type="1">
+		<li>The minimum amount of money you can spend is 20</li>
+		<li>The maximum amount of money you can spend is 100</li>
+		<li>Between 20 and 100, you can spend every dollar, step is equal to 1 dollar. You can spend 20, 21, 22, ... up to 100</li>
+		<li>One mile/point cost 0.02 usd, so if you spend 20 usd, you will get 1000 miles/points</li>
+	</ol>
+</p>
+<p>
+	Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+		<code>https://sandbox.giift.com/api/cart/v1/buy/topup</code>
+	</a>
+</p>
+<p>
+	Content-Type sould be <code>application/json</code>.
+</p>
+<p>
+	List of parameters:
+	<table  class="table table-bordered">
+		<tr>
+			<th>
+				Parameter
+			</th>
+      <th>
+				Required
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>dmo_id</code>
+			</td>
+      <td>
+        Yes
+      </td>
+			<td>
+				Id of the program for which to issue a card. The list of programs can be obtained by a query to <a href="http://giift.github.io/#!/giiftloyalty/web/buyable_list" target="_blank">
+					<code>https://sandbox.giift.com/api/cart/v2/buyable/list</code>.
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>amount</code>
+			</td>
+      <td>
+        Yes
+      </td>
+			<td>
+				Amount of miles or points you want to purchase.
+			</td>
+		</tr>
+    <tr>
+			<td>
+				<code>currency</code>
+			</td>
+      <td>
+        Yes
+      </td>
+			<td>
+				As the miles or points could be purchased in different currencies depending on the Miles/Points program, you must specify which currency you want to use. You can only use the currencies available in the buyable list.
+        For example, in the previous example, only 'usd' is available as it is the only one we find in 'unit'.
+			</td>
+		</tr>
+    <tr>
+      <td>
+        <code>familyName</code>
+      </td>
+      <td>
+        Yes
+      </td>
+      <td>
+        The user family name registered in his/her Miles/Loyalty Program Account.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>givenName</code>
+      </td>
+      <td>
+        Yes
+      </td>
+      <td>
+        The user first name registered in his/her Miles/Loyalty Program Account.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>email</code>
+      </td>
+      <td>
+        Yes
+      </td>
+      <td>
+        The email the user user when he registered in his/her Miles/Loyalty Program.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>number</code>
+      </td>
+      <td>
+        Yes
+      </td>
+      <td>
+        The Account number provided to the user when he/she registered to his/her Miles/Loyalty Program.
+      </td>
+    </tr>
+		<tr>
+			<td>
+				<code>delivery_data_notification_url</code>
+			</td>
+      <td>
+      </td>
+			<td>
+				Giift.com will POST the details of the card to this url.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[receipt_id]</code>
+			</td>
+      <td>
+        No but Highly recommended.
+      </td>
+			<td>
+				Internal ID of the system buying the miles/points. Very useful for end of month reconiliation between two systems(this metadata is highly recommended).
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[pos_id]</code>
+			</td>
+      <td>
+        No
+      </td>
+			<td>
+				If the miles/points are generated out of a group of machine, you might want to know from which one. Not necessary when issue from a web platform or an e-commerce experience.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[branch_id]</code>
+			</td>
+			<td>
+				No
+			</td>
+			<td>
+				If a group of shops have access to machine to offer cards, you might want to record from which shop.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[operator_id]</code>
+			</td>
+      <td>
+        No
+      </td>
+			<td>
+				User ID in the system that triggers the gift card offering.
+			</td>
+		</tr>
+	</table>
+</p>
+<p>
+  The json will be looking like the following example:
+</p>
+<pre>
+{
+  "card":{
+        "dmo":{
+           "id":"DMO_ID"
+        },
+        "user":{
+            "familyName":"USER LAST NAME",
+            "givenName":"USER FIRST NAME",
+            "email":"USER EMAIL"
+        },
+        "fields":{
+            "number":"USER ACCOUNT CARD NUMBER"
+        }
+    },
+    "amt":"AMOUNT of POINTS TO BE PURCHASED",
+    "ccy":"CURRENCY USED TO PAY",
+    "metadatas":{
+    	"receipt_id":"RECEIPT NUMBER",
+    	"operator_id":"OPERATOR ID"
+    },
+    "delivery_data_notification_url":"https://delivery_data_notification_url_you_provided.com"
+}
+</pre>
+<p>
+	In giift.com system, the miles and points will be deliver asynchronously. In the first case, the card details will be returned in the response body as followed:
+</p>
+<pre>
+{
+    "orderId": "ORDER_ID",
+    "cards": [
+        {
+            "id": "CARD_ID",
+            "dmo_id": "DMO_ID",
+            "user": null,
+            "status": "135024633118xiinl",
+            "status_name": "usable",
+            "fields": {
+                "value": 0,
+                "number": "USER ACCOUNT CARD NUMBER"
+            },
+            "created_at": #UNIX_TIMESTAMP#,
+            "updated_at": #UNIX_TIMESTAMP#
+        }
+    ]
+}
+</pre>
+<p>You should save the order id for later when Giift.com will post on the 'delivery_data_notification_url'
+</p>
+<p>
+	If you are passing a proper url in the field delivery_data_notification_url, the system will POST the delivery details, including the card details (card number, PIN, expiry), for you to use in your system.
+	Here is the format of the delivey object:
+</p>
+<pre>
+{
+		"Id": "#DELIVERY_ID#",
+		"Provider": "gtopup",
+		"Status": "delivered",
+		"Info": "info_data",
+		"OrderId": "#ORDER_ID#",
+		"CreatedAt": "YYY-MM-DDTHH:MM:SSZ",
+		"UpdatedAt": "YYY-MM-DDTHH:MM:SSZ",
+		"infos": {
+			"notification_url": "https://delivery_data_notification_url_you_provided.com"
+		}
+}
+</pre>
+<p>
+  Make sure the status of the delivery is 'delivered', it will mean that the request has been properly passed to the Airline/Hotel or Reward Program and that the user account is already or about to be credited very soon.
+</p>
+<p>
+	If the delivery status is 'blocked', it means that the system could not request the points allocation and you can alert your user accordingly and refund.
+</p>
+<p>
+  You will use the OrderId to match the notification url with the proper order.
+</p>
+<h3>
+	Order Status API
+</h3>
+<p>There is an alternative to notification url process. If you want to run your own order checking mechanism, Giift API has a specific endpoint to check the delivery
+	status of an order: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+		<code>https://sandbox.giift.com/api/cart/v1/order/delivery_status/&lt;order_id&gt;</code></a>
+</p>
+<p>It will return the same structure as the json sent to the notification url:
+	<pre>
+		{
+			"Id": "1619071617gJdHZ",
+			"Provider": "gtopup",
+			"Status": "delievered",
+			"Info": "LcpLCoAgEADQu3gAp5A+eJaBEDEcNEd02hTdvRZtH+9WhYV28k6Iy3a2rKyKIrVbBITInLq+XKXQtOfjF4Tv+4gwDWZcF4TkDMuM0CmHIgjqeQE=",
+			"OrderId": "1619071617izeZD",
+			"CreatedAt": "2021-04-22T06:06:57Z",
+			"UpdatedAt": "2021-04-22T06:06:57Z",
+			"infos": {
+				"notification_url": "https://delivery_data_notification_url_you_provided.com"
+			}
+		}
+		</pre>
+</p>
+<p>If the status is <code>"Status": "delivered"</code>, you can communicate with your customer that the miles top up has been processed succsssfully. </p>

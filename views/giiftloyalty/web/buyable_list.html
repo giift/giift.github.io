@@ -1,0 +1,88 @@
+<h1>List of cards, products and points available in the API</h1>
+<h3>Retrieve the entire list</h3>
+<p>The entire list of cards, products, topup of miles and points can all be retrieve in one single call:<a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank"><code>https://sandbox.giift.com/api/cart/v2/buyable/list</code></a>.</p>
+<h3>Filter by country</h3>
+If you wish to retrieve only the items from one country, just add the parameter in the query country=XX. The country code is using the <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="_blank">ISO 3166-1 alpha-2 </a>.
+Example, if you want to retrieve all items in Giift catalogue in the US, just use:<a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank"><code>https://sandbox.giift.com/api/cart/v2/buyable/list?country=US</code></a>.
+<h3>Filter by type</h3>
+If you wish to retrieve only the items from one type.
+These are the current types:
+<p>List of parameters:
+	<table class="table table-bordered">
+		<tr>
+			<th>
+				Type
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>card</code>
+			</td>
+			<td>
+				Gift cards program.
+			</td>
+		</tr>
+    <tr>
+      <td>
+        <code>topup</code>
+      </td>
+      <td>
+        All the type of topups. It concerns topup of gift cards (adding value to an existing card), but also points and miles purchases.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>product</code>
+      </td>
+      <td>
+        Merchandises and physical products.
+      </td>
+    </tr>
+  </table>
+</p>
+Example, if you want to retrieve all gift cards in Giift catalogue, just use:<a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank"><code>https://sandbox.giift.com/api/cart/v2/buyable/list?type=card</code></a>.
+<h3>Display the price in a specific currency</h3>
+Per default, all the prices are displayed in the currency of the product you are trying to buy. If you want to retrieve the prices in a specific currency, add it to the list of parameter currency=usd in lower case <a href="https://en.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217</a>.
+The field <a>unit</a> will still be displaying the original currency of the object but the file <a>price</a> will display the price in the currency you choose.
+<pre>
+"underlying_id": "136331780173ogyaw",
+"type": "card",
+"name": "Starbucks",
+"imgs": [
+  "https://d3gtfkjy2y6ijv.cloudfront.net/assets/img/card_tpl/1477366362S88S1.png"
+],
+"units": [
+  {
+    "unit": "usd",
+    "type": "fixed",
+    "value": 10,
+    "price": 13.28035
+  },
+  {
+    "unit": "usd",
+    "type": "fixed",
+    "value": 25,
+    "price": 33.200875000000003
+  },
+  {
+    "unit": "usd",
+    "type": "fixed",
+    "value": 50,
+    "price": 66.401750000000007
+  },
+  {
+    "unit": "usd",
+    "type": "fixed",
+    "value": 100,
+    "price": 132.80350000000001
+  }
+],
+  </pre>
+  <h3>Display a specific list</h3>
+  If you are implementing a exchange platform, in a sense where you are in charge of offering a list of redemption possibilities to your users, you might want to restrict the list of cards, topup and products you would like to retrieve.
+  For example, you might want only few carefully chosen US card and few airlines miles program only. In order to retrieve only a sublist, you will be contact with Giift.com Support to set up the desired configuration.
+  Your loyalty program will be added in Giift database and a id will be provided to you. Using this id, you will call: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank"><code>https://sandbox.giift.com/api/cart/v2/buyable/list?buying_with=YOUR_LOYALTY_ID_IN_GIIFT</code></a>.
+  <p>You will then only retrieve the list you are entitled to purchase.</p>

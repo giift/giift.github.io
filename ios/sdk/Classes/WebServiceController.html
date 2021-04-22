@@ -1,0 +1,4489 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WebServiceController Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">giift </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">giift.com</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedInstance">+ sharedInstance</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/allDMOSinceTimeStamp:completion:">- allDMOSinceTimeStamp:completion:</option>
+		
+		<option value="//api/name/cartBuyableItem:type:completion:">- cartBuyableItem:type:completion:</option>
+		
+		<option value="//api/name/cartBuyableItemFields:parameters:completion:">- cartBuyableItemFields:parameters:completion:</option>
+		
+		<option value="//api/name/cartClearAllCarts:">- cartClearAllCarts:</option>
+		
+		<option value="//api/name/cartCreate:">- cartCreate:</option>
+		
+		<option value="//api/name/cartDelete:completion:">- cartDelete:completion:</option>
+		
+		<option value="//api/name/cartImport:completion:">- cartImport:completion:</option>
+		
+		<option value="//api/name/cartItemAdd:type:itemId:currency:quantity:completion:">- cartItemAdd:type:itemId:currency:quantity:completion:</option>
+		
+		<option value="//api/name/cartItemDelete:completion:">- cartItemDelete:completion:</option>
+		
+		<option value="//api/name/cartItemSetQuantity:quantity:completion:">- cartItemSetQuantity:quantity:completion:</option>
+		
+		<option value="//api/name/cartItems:completion:">- cartItems:completion:</option>
+		
+		<option value="//api/name/cartLastOpen:">- cartLastOpen:</option>
+		
+		<option value="//api/name/cartOpen:">- cartOpen:</option>
+		
+		<option value="//api/name/cartOrder:completion:">- cartOrder:completion:</option>
+		
+		<option value="//api/name/cartOrderAddInfos:parameters:completion:">- cartOrderAddInfos:parameters:completion:</option>
+		
+		<option value="//api/name/cartOrderAll:">- cartOrderAll:</option>
+		
+		<option value="//api/name/cartOrderAvailableDeliveryProvider:completion:">- cartOrderAvailableDeliveryProvider:completion:</option>
+		
+		<option value="//api/name/cartOrderAvailablePaymentProvider:completion:">- cartOrderAvailablePaymentProvider:completion:</option>
+		
+		<option value="//api/name/cartOrderDeliveryInformation:delivery:parameters:completion:">- cartOrderDeliveryInformation:delivery:parameters:completion:</option>
+		
+		<option value="//api/name/cartOrderLastOpen:">- cartOrderLastOpen:</option>
+		
+		<option value="//api/name/cartOrderSelectDeliveryProvider:deliveryProvider:completion:">- cartOrderSelectDeliveryProvider:deliveryProvider:completion:</option>
+		
+		<option value="//api/name/cartOrderToPayment:paymentProvider:completion:">- cartOrderToPayment:paymentProvider:completion:</option>
+		
+		<option value="//api/name/cartOrderValue:completion:">- cartOrderValue:completion:</option>
+		
+		<option value="//api/name/cartPaymentLastOpen:">- cartPaymentLastOpen:</option>
+		
+		<option value="//api/name/cartPaymentPay:paymentFields:completion:">- cartPaymentPay:paymentFields:completion:</option>
+		
+		<option value="//api/name/cartPaymentRequiredFields:completion:">- cartPaymentRequiredFields:completion:</option>
+		
+		<option value="//api/name/cartPaymentStatus:completion:">- cartPaymentStatus:completion:</option>
+		
+		<option value="//api/name/cartToOrder:completion:">- cartToOrder:completion:</option>
+		
+		<option value="//api/name/cartValue:completion:">- cartValue:completion:</option>
+		
+		<option value="//api/name/checkRetailerLocationMapPicture:completion:">- checkRetailerLocationMapPicture:completion:</option>
+		
+		<option value="//api/name/deleteCardWithId:completion:">- deleteCardWithId:completion:</option>
+		
+		<option value="//api/name/editCardWithId:completion:">- editCardWithId:completion:</option>
+		
+		<option value="//api/name/findCardUpdatedSince:completion:">- findCardUpdatedSince:completion:</option>
+		
+		<option value="//api/name/findCategories:completion:">- findCategories:completion:</option>
+		
+		<option value="//api/name/findContentForRetailer:updatedAt:completion:">- findContentForRetailer:updatedAt:completion:</option>
+		
+		<option value="//api/name/findDmoCategory:completion:">- findDmoCategory:completion:</option>
+		
+		<option value="//api/name/findDmoSettingforId:updatedAt:completion:">- findDmoSettingforId:updatedAt:completion:</option>
+		
+		<option value="//api/name/findDmoWithId:completion:">- findDmoWithId:completion:</option>
+		
+		<option value="//api/name/findLocationForRetailerId:updatedAt:completion:">- findLocationForRetailerId:updatedAt:completion:</option>
+		
+		<option value="//api/name/findQRCodeForCardId:completion:">- findQRCodeForCardId:completion:</option>
+		
+		<option value="//api/name/findRetailersDistanceToLatitude:longitude:completion:">- findRetailersDistanceToLatitude:longitude:completion:</option>
+		
+		<option value="//api/name/findTransactionForCardId:completion:">- findTransactionForCardId:completion:</option>
+		
+		<option value="//api/name/getAboutDmo:completion:">- getAboutDmo:completion:</option>
+		
+		<option value="//api/name/getAboutGiift:completion:">- getAboutGiift:completion:</option>
+		
+		<option value="//api/name/getConversionsForDmoId:completion:">- getConversionsForDmoId:completion:</option>
+		
+		<option value="//api/name/getCouponsForDmoID:completion:">- getCouponsForDmoID:completion:</option>
+		
+		<option value="//api/name/getProductsForDmoId:completion:">- getProductsForDmoId:completion:</option>
+		
+		<option value="//api/name/getRetailerLocationSettingForId:completion:">- getRetailerLocationSettingForId:completion:</option>
+		
+		<option value="//api/name/getUserPortfolioValue:">- getUserPortfolioValue:</option>
+		
+		<option value="//api/name/getUserProfile:">- getUserProfile:</option>
+		
+		<option value="//api/name/getWfInit:completion:">- getWfInit:completion:</option>
+		
+		<option value="//api/name/getWfResume:completion:">- getWfResume:completion:</option>
+		
+		<option value="//api/name/linkSocialMediaAccount:token:completion:">- linkSocialMediaAccount:token:completion:</option>
+		
+		<option value="//api/name/loginWithEmail:password:completion:">- loginWithEmail:password:completion:</option>
+		
+		<option value="//api/name/loginWithSocialMedia:code:completion:">- loginWithSocialMedia:code:completion:</option>
+		
+		<option value="//api/name/logout:">- logout:</option>
+		
+		<option value="//api/name/patchUserProfile:completion:">- patchUserProfile:completion:</option>
+		
+		<option value="//api/name/postForgotPassword:completion:">- postForgotPassword:completion:</option>
+		
+		<option value="//api/name/postWfStep:orderId:action:params:completion:">- postWfStep:orderId:action:params:completion:</option>
+		
+		<option value="//api/name/readCategories:">- readCategories:</option>
+		
+		<option value="//api/name/readDmoCategory:">- readDmoCategory:</option>
+		
+		<option value="//api/name/serverDmoData:dmoId:completed:">- serverDmoData:dmoId:completed:</option>
+		
+		<option value="//api/name/signUpWithEmail:password:country:completion:">- signUpWithEmail:password:country:completion:</option>
+		
+		<option value="//api/name/unlinkSocialMediaAccount:completion:">- unlinkSocialMediaAccount:completion:</option>
+		
+		<option value="//api/name/updateCartItem:parameters:completion:">- updateCartItem:parameters:completion:</option>
+		
+		<option value="//api/name/updateCountryData:">- updateCountryData:</option>
+		
+		<option value="//api/name/updateDeliveryItemFields:parameters:completion:">- updateDeliveryItemFields:parameters:completion:</option>
+		
+		<option value="//api/name/updateDmoCategory:completion:">- updateDmoCategory:completion:</option>
+		
+		<option value="//api/name/verifySocialMediaLinkStatus:">- verifySocialMediaLinkStatus:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WebServiceController Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WebServiceController.h<br />WebServiceController.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@header WebServiceController.h</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>WebServiceController singleton object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)sharedInstance</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>id</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Create web service controller instance and use it to perform web service requests</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loginWithSocialMedia:code:completion:" title="loginWithSocialMedia:code:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loginWithSocialMedia:code:completion:">&ndash;&nbsp;loginWithSocialMedia:code:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Exchange a social media authorization code for a giift access token</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)loginWithSocialMedia:(NSString *)<em>media</em> code:(NSString *)<em>code</em> completion:(nullable void ( ^ ) ( BOOL success , NSError *_Nullable error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>media</code></th>
+						<td><p>social media key (facebook, )</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/linkSocialMediaAccount:token:completion:" title="linkSocialMediaAccount:token:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/linkSocialMediaAccount:token:completion:">&ndash;&nbsp;linkSocialMediaAccount:token:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Link social media account</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)linkSocialMediaAccount:(SocialMediaProvider)<em>provider</em> token:(NSString *)<em>token</em> completion:(void ( ^ ) ( BOOL success , SocialMediaLink *socialMediaLink , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>provider</code></th>
+						<td><p>either Google or Facebook</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>token</code></th>
+						<td><p>either Google&rsquo;s id_token or Facebook&rsquo;s tokenString</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unlinkSocialMediaAccount:completion:" title="unlinkSocialMediaAccount:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unlinkSocialMediaAccount:completion:">&ndash;&nbsp;unlinkSocialMediaAccount:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unlink social media account</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unlinkSocialMediaAccount:(SocialMediaProvider)<em>provider</em> completion:(void ( ^ ) ( BOOL success , SocialMediaUnlink *socialMediaUnlink , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>provider</code></th>
+						<td><p>either Google or Facebook</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/verifySocialMediaLinkStatus:" title="verifySocialMediaLinkStatus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/verifySocialMediaLinkStatus:">&ndash;&nbsp;verifySocialMediaLinkStatus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Verify if social media account is linkedThe card&rsquo;s screen type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)verifySocialMediaLinkStatus:(void ( ^ ) ( BOOL success , NSArray *socialMediaList , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError. Each item of the NSArray is a social media</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/signUpWithEmail:password:country:completion:" title="signUpWithEmail:password:country:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/signUpWithEmail:password:country:completion:">&ndash;&nbsp;signUpWithEmail:password:country:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>POST sign-up data server and create new account via Email option</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)signUpWithEmail:(NSString *)<em>username</em> password:(NSString *)<em>password</em> country:(NSString *)<em>country</em> completion:(void ( ^ ) ( BOOL success , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>username</code></th>
+						<td><p>login name</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>password</code></th>
+						<td><p>require minimum 6 characters</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Server verify email and reject registered user</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loginWithEmail:password:completion:" title="loginWithEmail:password:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loginWithEmail:password:completion:">&ndash;&nbsp;loginWithEmail:password:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>POST login data server and create active session via Email option</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)loginWithEmail:(NSString *)<em>username</em> password:(NSString *)<em>password</em> completion:(void ( ^ ) ( BOOL success , NSError *error , NSDictionary *JSON , NSURLRequest *request ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>username</code></th>
+						<td><p>login name</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>password</code></th>
+						<td><p>require minimum 6 characters</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logout:" title="logout:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logout:">&ndash;&nbsp;logout:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Log out user and destroy active session via Email option</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)logout:(void ( ^ ) ( BOOL success , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/postForgotPassword:completion:" title="postForgotPassword:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/postForgotPassword:completion:">&ndash;&nbsp;postForgotPassword:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Request server to reset the password</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)postForgotPassword:(NSString *)<em>email</em> completion:(void ( ^ ) ( BOOL success , ForgotPassword *passwordObject , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>email</code></th>
+						<td><p>user&rsquo;s email address</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For Email login option only</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/patchUserProfile:completion:" title="patchUserProfile:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/patchUserProfile:completion:">&ndash;&nbsp;patchUserProfile:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Update remote user&rsquo;s profile from local description</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)patchUserProfile:(NSDictionary *)<em>parameters</em> completion:(void ( ^ ) ( BOOL success , User *arrMapping , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>User&rsquo;s parameters construction in NSDictionary, eg. @{kUserFirst_name:@&ldquo;John&rdquo;, kUserLast_name:@&ldquo;Smith&rdquo;};</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session. To construct user&rsquo;s parameters, use key from GIIPublicConstants.h (User)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getUserProfile:" title="getUserProfile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getUserProfile:">&ndash;&nbsp;getUserProfile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Update local user&rsquo;s profile from remote description</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getUserProfile:(void ( ^ ) ( BOOL success , User *user , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session. To construct user&rsquo;s parameters, use key from GIIPublicConstants.h (User)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getUserPortfolioValue:" title="getUserPortfolioValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getUserPortfolioValue:">&ndash;&nbsp;getUserPortfolioValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query active user&rsquo;s portfolio value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getUserPortfolioValue:(void ( ^ ) ( BOOL success , NSDictionary *data , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userID</code></th>
+						<td><p>User user'ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSString, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Portfolio&rsquo;s value is obtain directly from completion block&rsquo;s result in NSString, portfolio&rsquo;s currency is base on user&rsquo;s profile</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/serverDmoData:dmoId:completed:" title="serverDmoData:dmoId:completed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serverDmoData:dmoId:completed:">&ndash;&nbsp;serverDmoData:dmoId:completed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query update from the server dmo&rsquo;s data</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)serverDmoData:(NSMutableDictionary *)<em>serverDMOs</em> dmoId:(NSString *)<em>dmoId</em> completed:(nullable void ( ^ ) ( Dmo *_Nullable serverDMO ))<em>completeBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>serverDMOs</code></th>
+						<td><p>the list of available dmos</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DMOId</code></th>
+						<td><p>the specific dmo to update</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>completeBlock serverSyncBlock</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Use in tableview&rsquo;s cellForRowAtIndexPath to refresh the dmo&rsquo;s data for display</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findDmoSettingforId:updatedAt:completion:" title="findDmoSettingforId:updatedAt:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findDmoSettingforId:updatedAt:completion:">&ndash;&nbsp;findDmoSettingforId:updatedAt:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query dmo&rsquo;s setting for a updated list of setting&rsquo;s data for the specific dmo</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findDmoSettingforId:(NSString *)<em>dmoId</em> updatedAt:(NSNumber *)<em>timestamp</em> completion:(void ( ^ ) ( BOOL success , NSArray *settingObject , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timestamp</code></th>
+						<td><p>unix timestamp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dmoID</code></th>
+						<td><p>dmo&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Dmo&rsquo;s setting include the number of conversions, news, products, coupons and users related to the dmo</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findDmoWithId:completion:" title="findDmoWithId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findDmoWithId:completion:">&ndash;&nbsp;findDmoWithId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query the server for the specific dmo&rsquo;s program</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findDmoWithId:(NSString *)<em>dmoId</em> completion:(void ( ^ ) ( BOOL success , Dmo *dmo , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DMOId</code></th>
+						<td><p>dmo&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getAboutDmo:completion:" title="getAboutDmo:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAboutDmo:completion:">&ndash;&nbsp;getAboutDmo:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query &lsquo;About Us&rsquo; content for the specific dmo&rsquo;s program</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getAboutDmo:(NSString *)<em>dmoId</em> completion:(void ( ^ ) ( BOOL success , NSArray *arrMapping , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DMOId</code></th>
+						<td><p>dmo&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allDMOSinceTimeStamp:completion:" title="allDMOSinceTimeStamp:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allDMOSinceTimeStamp:completion:">&ndash;&nbsp;allDMOSinceTimeStamp:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query the server for the a list of updated dmos' program</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)allDMOSinceTimeStamp:(NSNumber *)<em>timestamp</em> completion:(void ( ^ ) ( BOOL success , NSArray *dmoObjects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timestamp</code></th>
+						<td><p>unix timestamp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateDmoCategory:completion:" title="updateDmoCategory:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateDmoCategory:completion:">&ndash;&nbsp;updateDmoCategory:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Update the list of dmocategorie</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateDmoCategory:(NSString *)<em>timestamp</em> completion:(void ( ^ ) ( BOOL success , NSArray *dmoCategoryObjects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timestamp</code></th>
+						<td><p>last update timestamp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>completionBlock status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findDmoCategory:completion:" title="findDmoCategory:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findDmoCategory:completion:">&ndash;&nbsp;findDmoCategory:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Find the list of dmocategorie</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findDmoCategory:(NSString *)<em>dmoCategoryId</em> completion:(void ( ^ ) ( BOOL success , NSArray *dmoCategoryObjects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dmoCategoryID</code></th>
+						<td><p>dmoCategoryID from the ENTITY_DMOCATEGORY</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readDmoCategory:" title="readDmoCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readDmoCategory:">&ndash;&nbsp;readDmoCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the list of dmocategory id</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readDmoCategory:(void ( ^ ) ( BOOL success , NSArray *dmoCategory , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findCategories:completion:" title="findCategories:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findCategories:completion:">&ndash;&nbsp;findCategories:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Find the list of categories</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findCategories:(NSString *)<em>categoriesId</em> completion:(void ( ^ ) ( BOOL success , NSArray *categoriesObjects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>categoriesID</code></th>
+						<td><p>categoriesID from the ENTITY_CATEGORIES</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readCategories:" title="readCategories:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readCategories:">&ndash;&nbsp;readCategories:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the list of categories id</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)readCategories:(void ( ^ ) ( BOOL success , NSArray *categories , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findRetailersDistanceToLatitude:longitude:completion:" title="findRetailersDistanceToLatitude:longitude:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findRetailersDistanceToLatitude:longitude:completion:">&ndash;&nbsp;findRetailersDistanceToLatitude:longitude:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query the list of retailer&rsquo;s distance from the given latitude and longitude</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findRetailersDistanceToLatitude:(NSNumber *)<em>lat</em> longitude:(NSNumber *)<em>lon</em> completion:(void ( ^ ) ( BOOL success , NSDictionary *distances , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lat</code></th>
+						<td><p>CLLocationCoordinate2D latitude in the form of NSNumber, eg. use [NSNumber numberWithDouble:latitude];</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lon</code></th>
+						<td><p>CLLocationCoordinate2D Longitude in the form of string, eg. use [NSNumber numberWithDouble:longitude];</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>JSON&rsquo;s object contain a list of key (retailer&rsquo;s ID) and value (distance in metre)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/checkRetailerLocationMapPicture:completion:" title="checkRetailerLocationMapPicture:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkRetailerLocationMapPicture:completion:">&ndash;&nbsp;checkRetailerLocationMapPicture:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query the specific retailer if the location map image is available</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)checkRetailerLocationMapPicture:(nonnull NSString *)<em>retailerId</em> completion:(void ( ^ ) ( BOOL success , RetailerLocationMapPicture *retailerMapPicture , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>retailerID</code></th>
+						<td><p><a href="../Classes/RetailerLocationMapPicture.html">RetailerLocationMapPicture</a> retailer&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Look in <a href="../Classes/RetailerLocationMapPicture.html">RetailerLocationMapPicture</a> class&rsquo;s property (NSNumber*)value to verify the presence of availability of location map</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findContentForRetailer:updatedAt:completion:" title="findContentForRetailer:updatedAt:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findContentForRetailer:updatedAt:completion:">&ndash;&nbsp;findContentForRetailer:updatedAt:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query retailer&rsquo;s content for a updated list of retailer&rsquo;s content for the specific retailer ID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findContentForRetailer:(nonnull NSString *)<em>retailerId</em> updatedAt:(nullable NSNumber *)<em>timestamp</em> completion:(nullable void ( ^ ) ( BOOL success , NSArray *retailerObject , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timestamp</code></th>
+						<td><p>unix timestamp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>retailerID</code></th>
+						<td><p>RetailerContent retailer content&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Timestamp is optional</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getRetailerLocationSettingForId:completion:" title="getRetailerLocationSettingForId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getRetailerLocationSettingForId:completion:">&ndash;&nbsp;getRetailerLocationSettingForId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query retailer&rsquo;s setting data for the specific location ID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getRetailerLocationSettingForId:(nonnull NSString *)<em>locationId</em> completion:(void ( ^ ) ( BOOL success , NSArray *retailerObject , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>locationID</code></th>
+						<td><p>RetailerSetting location&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Retailer&rsquo;s setting data includes retailer&rsquo;s shop description, retailer&rsquo;s shop image via URL</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findLocationForRetailerId:updatedAt:completion:" title="findLocationForRetailerId:updatedAt:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findLocationForRetailerId:updatedAt:completion:">&ndash;&nbsp;findLocationForRetailerId:updatedAt:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query locations data for the specific dmo&rsquo;s retailer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findLocationForRetailerId:(nonnull NSString *)<em>retailerID</em> updatedAt:(nullable NSNumber *)<em>timestamp</em> completion:(void ( ^ ) ( BOOL success , NSArray *locationObject , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>retailerID</code></th>
+						<td><p>dmo&rsquo;s retailerID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getProductsForDmoId:completion:" title="getProductsForDmoId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getProductsForDmoId:completion:">&ndash;&nbsp;getProductsForDmoId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>*!</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getProductsForDmoId:(NSString *)<em>dmoId</em> completion:(void ( ^ ) ( BOOL success , NSArray *productObject , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>*!</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateCountryData:" title="updateCountryData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateCountryData:">&ndash;&nbsp;updateCountryData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifically request to update country data from the server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateCountryData:(void ( ^ ) ( BOOL success , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getAboutGiift:completion:" title="getAboutGiift:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAboutGiift:completion:">&ndash;&nbsp;getAboutGiift:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query the server for Giift.com description</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getAboutGiift:(NSString *)<em>language</em> completion:(void ( ^ ) ( BOOL success , NSString *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>language</code></th>
+						<td><p>language key (@&ldquo;en&rdquo;, @&ldquo;ch&rdquo;, @&ldquo;fr&rdquo;)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSString, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Currently English, Chinese and French are supported only</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findTransactionForCardId:completion:" title="findTransactionForCardId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findTransactionForCardId:completion:">&ndash;&nbsp;findTransactionForCardId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query transaction data for the specific card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findTransactionForCardId:(nonnull NSString *)<em>cardID</em> completion:(void ( ^ ) ( BOOL success , NSArray *transactionObject , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cardID</code></th>
+						<td><p>card&rsquo;s ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/editCardWithId:completion:" title="editCardWithId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/editCardWithId:completion:">&ndash;&nbsp;editCardWithId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Update card&rsquo;s detail</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)editCardWithId:(NSDictionary *)<em>parameters</em> completion:(void ( ^ ) ( BOOL success , Card *card , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>card&rsquo;s parameters construction in NSDictionary, eg. @{kCardID:@&ldquo;1437969671uYMMB&rdquo;, kCardNumber:@&ldquo;12345678&rdquo;, kCardValue:[NSNumber numberWithInt:120]};</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session. To construct card&rsquo;s parameters, use key from GIIPublicConstants.h (Card)</p><div class="warning"><p><strong>Warning:</strong> Mandatory to add key(kCardID) as part of the parameters and the rests are optional</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteCardWithId:completion:" title="deleteCardWithId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteCardWithId:completion:">&ndash;&nbsp;deleteCardWithId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delete card at server and locally for user with the card&rsquo;s ID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteCardWithId:(nonnull NSString *)<em>cardID</em> completion:(void ( ^ ) ( BOOL success , Card *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cardID</code></th>
+						<td><p>card&rsquo;s ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findQRCodeForCardId:completion:" title="findQRCodeForCardId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findQRCodeForCardId:completion:">&ndash;&nbsp;findQRCodeForCardId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query QR data for the specific card</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findQRCodeForCardId:(nonnull NSString *)<em>cardID</em> completion:(nullable void ( ^ ) ( BOOL success , QRCode *QRObject , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cardID</code></th>
+						<td><p>card&rsquo;s ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findCardUpdatedSince:completion:" title="findCardUpdatedSince:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findCardUpdatedSince:completion:">&ndash;&nbsp;findCardUpdatedSince:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch the latest cards for the user w.r.t the given timestamp</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findCardUpdatedSince:(NSNumber *)<em>timestamp</em> completion:(void ( ^ ) ( BOOL success , NSArray *cardObjects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timestamp</code></th>
+						<td><p>unix timestamp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userID</code></th>
+						<td><p>user&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getWfInit:completion:" title="getWfInit:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getWfInit:completion:">&ndash;&nbsp;getWfInit:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get Init wf url
+@param url</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getWfInit:(nonnull NSString *)<em>url</em> completion:(void ( ^ ) ( BOOL success , WFObject *initObjects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/postWfStep:orderId:action:params:completion:" title="postWfStep:orderId:action:params:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/postWfStep:orderId:action:params:completion:">&ndash;&nbsp;postWfStep:orderId:action:params:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Post a Wf step
+@param url</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)postWfStep:(nonnull NSString *)<em>url</em> orderId:(nonnull NSString *)<em>orderId</em> action:(NSString *)<em>action</em> params:(NSDictionary *)<em>params</em> completion:(void ( ^ ) ( BOOL success , WFObject *stepObjects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session, call getWfInit before postWfStep</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getWfResume:completion:" title="getWfResume:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getWfResume:completion:">&ndash;&nbsp;getWfResume:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resume a wf where it was last left
+@param url</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getWfResume:(nonnull NSString *)<em>url</em> completion:(void ( ^ ) ( BOOL success , WFObject *stepObjects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Require active session, call getWfInit before getWfResume</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getConversionsForDmoId:completion:" title="getConversionsForDmoId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getConversionsForDmoId:completion:">&ndash;&nbsp;getConversionsForDmoId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query conversions data for the specific dmo</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getConversionsForDmoId:(NSString *)<em>dmoId</em> completion:(void ( ^ ) ( BOOL success , NSArray *conversionObject , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dmoID</code></th>
+						<td><p>dmo&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartCreate:" title="cartCreate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartCreate:">&ndash;&nbsp;cartCreate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a cart in DB and put it in the cookies</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartCreate:(void ( ^ ) ( BOOL success , CartCurrent *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOpen:" title="cartOpen:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOpen:">&ndash;&nbsp;cartOpen:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get all pending carts from a user and in the cookie</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOpen:(void ( ^ ) ( BOOL success , NSArray *carts , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartLastOpen:" title="cartLastOpen:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartLastOpen:">&ndash;&nbsp;cartLastOpen:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the last opened cart or create it if there is none.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartLastOpen:(void ( ^ ) ( BOOL success , CartCurrent *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartClearAllCarts:" title="cartClearAllCarts:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartClearAllCarts:">&ndash;&nbsp;cartClearAllCarts:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delete all cookie reference to the cart</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartClearAllCarts:(void ( ^ ) ( BOOL success , CartStatus *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartDelete:completion:" title="cartDelete:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartDelete:completion:">&ndash;&nbsp;cartDelete:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delete a cart</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartDelete:(NSString *)<em>cartId</em> completion:(void ( ^ ) ( BOOL success , CartStatus *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cartID</code></th>
+						<td><p>cart&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartValue:completion:" title="cartValue:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartValue:completion:">&ndash;&nbsp;cartValue:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the value a cart</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartValue:(NSString *)<em>cartId</em> completion:(void ( ^ ) ( BOOL success , CartValue *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cartID</code></th>
+						<td><p>cart&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartItems:completion:" title="cartItems:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartItems:completion:">&ndash;&nbsp;cartItems:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the list of items for a cart</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartItems:(NSString *)<em>cartId</em> completion:(void ( ^ ) ( BOOL success , CartItems *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cartID</code></th>
+						<td><p>cart&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartToOrder:completion:" title="cartToOrder:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartToOrder:completion:">&ndash;&nbsp;cartToOrder:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create the order in DB from a cart</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartToOrder:(NSString *)<em>cartId</em> completion:(void ( ^ ) ( BOOL success , CartOpenOrder *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cartID</code></th>
+						<td><p>cart&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartImport:completion:" title="cartImport:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartImport:completion:">&ndash;&nbsp;cartImport:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Import a cart into the current user&rsquo;s account</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartImport:(NSString *)<em>cartId</em> completion:(void ( ^ ) ( BOOL success , NSArray *objects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cartID</code></th>
+						<td><p>cart&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartItemAdd:type:itemId:currency:quantity:completion:" title="cartItemAdd:type:itemId:currency:quantity:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartItemAdd:type:itemId:currency:quantity:completion:">&ndash;&nbsp;cartItemAdd:type:itemId:currency:quantity:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add an item to a cart, create the cart if no cart id is provided</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartItemAdd:(NSString *)<em>cartId</em> type:(CartItemType)<em>itemType</em> itemId:(NSString *)<em>itemId</em> currency:(NSString *)<em>currency</em> quantity:(NSNumber *)<em>quantity</em> completion:(void ( ^ ) ( BOOL success , NSDictionary *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>itemType</code></th>
+						<td><p>item&rsquo;s type</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>currency</code></th>
+						<td><p>item&rsquo;s currency</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>quantity</code></th>
+						<td><p>quantity count</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status, result and error if any</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>itemID</code></th>
+						<td><p>item&rsquo;s ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>cartID</code></th>
+						<td><p>cart&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartItemSetQuantity:quantity:completion:" title="cartItemSetQuantity:quantity:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartItemSetQuantity:quantity:completion:">&ndash;&nbsp;cartItemSetQuantity:quantity:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the item qty</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartItemSetQuantity:(NSString *)<em>itemId</em> quantity:(NSNumber *)<em>quantity</em> completion:(void ( ^ ) ( BOOL success , CartItemSetQty *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>quantity</code></th>
+						<td><p>quantity count</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status, result and error if any</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>itemID</code></th>
+						<td><p>item&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartItemDelete:completion:" title="cartItemDelete:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartItemDelete:completion:">&ndash;&nbsp;cartItemDelete:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delete an item from the cart</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartItemDelete:(NSString *)<em>itemId</em> completion:(void ( ^ ) ( BOOL success , CartStatus *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>itemID</code></th>
+						<td><p>item&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrderAvailablePaymentProvider:completion:" title="cartOrderAvailablePaymentProvider:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrderAvailablePaymentProvider:completion:">&ndash;&nbsp;cartOrderAvailablePaymentProvider:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get all payment provider available for an order</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrderAvailablePaymentProvider:(NSString *)<em>orderId</em> completion:(void ( ^ ) ( BOOL success , CartOrderPaymentProvider *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orderID</code></th>
+						<td><p>order&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrderAvailableDeliveryProvider:completion:" title="cartOrderAvailableDeliveryProvider:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrderAvailableDeliveryProvider:completion:">&ndash;&nbsp;cartOrderAvailableDeliveryProvider:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get all delivery providers available for an order</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrderAvailableDeliveryProvider:(NSString *)<em>orderId</em> completion:(void ( ^ ) ( BOOL success , CartOrderDeliveryProvider *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orderID</code></th>
+						<td><p>order&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrderValue:completion:" title="cartOrderValue:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrderValue:completion:">&ndash;&nbsp;cartOrderValue:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the value of an order</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrderValue:(NSString *)<em>orderId</em> completion:(void ( ^ ) ( BOOL success , CartOrderValue *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orderID</code></th>
+						<td><p>order&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrder:completion:" title="cartOrder:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrder:completion:">&ndash;&nbsp;cartOrder:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get an order by its id</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrder:(NSString *)<em>orderId</em> completion:(void ( ^ ) ( BOOL success , CartOpenOrder *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orderID</code></th>
+						<td><p>order&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrderLastOpen:" title="cartOrderLastOpen:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrderLastOpen:">&ndash;&nbsp;cartOrderLastOpen:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the last opened order</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrderLastOpen:(void ( ^ ) ( BOOL success , CartOpenOrder *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrderAll:" title="cartOrderAll:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrderAll:">&ndash;&nbsp;cartOrderAll:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get all orders for the current user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrderAll:(void ( ^ ) ( BOOL success , CartOrderAll *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrderToPayment:paymentProvider:completion:" title="cartOrderToPayment:paymentProvider:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrderToPayment:paymentProvider:completion:">&ndash;&nbsp;cartOrderToPayment:paymentProvider:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a payment from the order</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrderToPayment:(NSString *)<em>orderId</em> paymentProvider:(NSString *)<em>paymentProvider</em> completion:(void ( ^ ) ( BOOL success , CartPaymentObject *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paymentProvider</code></th>
+						<td><p>order&rsquo;s payment provider</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status, result and error if any</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orderID</code></th>
+						<td><p>order&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrderSelectDeliveryProvider:deliveryProvider:completion:" title="cartOrderSelectDeliveryProvider:deliveryProvider:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrderSelectDeliveryProvider:deliveryProvider:completion:">&ndash;&nbsp;cartOrderSelectDeliveryProvider:deliveryProvider:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the delivery provider on an order</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrderSelectDeliveryProvider:(NSString *)<em>orderId</em> deliveryProvider:(NSString *)<em>deliveryProvider</em> completion:(void ( ^ ) ( BOOL success , CartOrderDeliverySelection *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deliveryProvider</code></th>
+						<td><p>order&rsquo;s delivery provider</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status, result and error if any</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orderID</code></th>
+						<td><p>order&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrderAddInfos:parameters:completion:" title="cartOrderAddInfos:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrderAddInfos:parameters:completion:">&ndash;&nbsp;cartOrderAddInfos:parameters:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set informations on an order</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrderAddInfos:(NSString *)<em>orderId</em> parameters:(NSDictionary *)<em>parameters</em> completion:(void ( ^ ) ( BOOL success , NSArray *objects , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>order&rsquo;s parameters</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orderID</code></th>
+						<td><p>order&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartOrderDeliveryInformation:delivery:parameters:completion:" title="cartOrderDeliveryInformation:delivery:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartOrderDeliveryInformation:delivery:parameters:completion:">&ndash;&nbsp;cartOrderDeliveryInformation:delivery:parameters:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set delivery informations on an order</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartOrderDeliveryInformation:(NSString *)<em>orderId</em> delivery:(NSString *)<em>deliveryId</em> parameters:(NSDictionary *)<em>parameters</em> completion:(void ( ^ ) ( BOOL success , CartOrderDeliveryInformation *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>order&rsquo;s parameters</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deliveryID</code></th>
+						<td><p>delivery&rsquo;s ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>orderID</code></th>
+						<td><p>order&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartPaymentRequiredFields:completion:" title="cartPaymentRequiredFields:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartPaymentRequiredFields:completion:">&ndash;&nbsp;cartPaymentRequiredFields:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get payment require fields</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartPaymentRequiredFields:(NSString *)<em>paymentId</em> completion:(void ( ^ ) ( BOOL success , CartPaymentFields *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paymentID</code></th>
+						<td><p>payment&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartPaymentPay:paymentFields:completion:" title="cartPaymentPay:paymentFields:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartPaymentPay:paymentFields:completion:">&ndash;&nbsp;cartPaymentPay:paymentFields:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform a payment</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartPaymentPay:(NSString *)<em>paymentId</em> paymentFields:(NSDictionary *)<em>paymentFields</em> completion:(void ( ^ ) ( BOOL success , NSDictionary *result , NSError *error , NSHTTPURLResponse *response ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paymentFields</code></th>
+						<td><p>payment&rsquo;s fields</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status, result and error if any</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paymentID</code></th>
+						<td><p>payment&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartPaymentStatus:completion:" title="cartPaymentStatus:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartPaymentStatus:completion:">&ndash;&nbsp;cartPaymentStatus:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get payment status</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartPaymentStatus:(NSString *)<em>paymentId</em> completion:(void ( ^ ) ( BOOL success , CartPaymentStatus *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paymentID</code></th>
+						<td><p>payment&rsquo;s ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartPaymentLastOpen:" title="cartPaymentLastOpen:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartPaymentLastOpen:">&ndash;&nbsp;cartPaymentLastOpen:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the last opened payment</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartPaymentLastOpen:(void ( ^ ) ( BOOL success , CartPaymentObject *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status in Boolean, result in NSArray, error in NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartBuyableItem:type:completion:" title="cartBuyableItem:type:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartBuyableItem:type:completion:">&ndash;&nbsp;cartBuyableItem:type:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get buyable item</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartBuyableItem:(NSString *)<em>buyableId</em> type:(CartItemType)<em>itemType</em> completion:(void ( ^ ) ( BOOL success , CartBuyableItem *result , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>itemType</code></th>
+						<td><p>payment&rsquo;s fields</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status, result and error if any</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>buyableID</code></th>
+						<td><p>buyable ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cartBuyableItemFields:parameters:completion:" title="cartBuyableItemFields:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cartBuyableItemFields:parameters:completion:">&ndash;&nbsp;cartBuyableItemFields:parameters:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set buyable item</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cartBuyableItemFields:(NSString *)<em>itemId</em> parameters:(NSDictionary *)<em>parameters</em> completion:(void ( ^ ) ( BOOL success , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>item&rsquo;s fields</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status and error if any</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>itemID</code></th>
+						<td><p>item ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateDeliveryItemFields:parameters:completion:" title="updateDeliveryItemFields:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateDeliveryItemFields:parameters:completion:">&ndash;&nbsp;updateDeliveryItemFields:parameters:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Update Delivery</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateDeliveryItemFields:(nonnull NSString *)<em>deliveryId</em> parameters:(nonnull NSDictionary *)<em>parameters</em> completion:(nullable void ( ^ ) ( BOOL success , NSDictionary *_Nullable response , NSError *_Nullable error ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>Delivery item&rsquo;s fields</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status and error if any</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deliveryID</code></th>
+						<td><p>Delivery item ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateCartItem:parameters:completion:" title="updateCartItem:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateCartItem:parameters:completion:">&ndash;&nbsp;updateCartItem:parameters:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Update Item</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateCartItem:(nonnull NSString *)<em>itemId</em> parameters:(nonnull NSDictionary *)<em>parameters</em> completion:(nullable void ( ^ ) ( BOOL success , NSDictionary *_Nullable response , NSError *_Nullable error , NSURLRequest *_Nullable request ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>Cart item&rsquo;s fields</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>status and error if any</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>itemID</code></th>
+						<td><p>Cart item ID</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/getCouponsForDmoID:completion:" title="getCouponsForDmoID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getCouponsForDmoID:completion:">&ndash;&nbsp;getCouponsForDmoID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>*!</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getCouponsForDmoID:(nonnull NSString *)<em>dmoId</em> completion:(nullable void ( ^ ) ( BOOL success , NSArray *_Nullable couponObject , NSError *_Nullable error ))<em>completionBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>*!</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WebServiceController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 giift.com. All rights reserved. Updated: 2017-11-08</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

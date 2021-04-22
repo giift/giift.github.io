@@ -1,0 +1,47 @@
+<h1>Give Loyalty points</h1>
+<p>There are 2 ways to add points to a loyalty program. One way is to directly specify a number of points to be added to the
+    card. The other way, is to specify the underlying financial transaction and the system will automatically convert it
+    into a number of points using the exchange rate setup in the system.</p>
+<h2>Points</h2>
+<p>Perform a POST request to the <a href="https://doc.giift.com/?urls.primaryName=Card" target="_blank"><code>card/credit/&lt;card_id&gt;</code></a>    method.</p>
+<p>Here is the list of parameters:</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>card_id</code></td>
+        <td>The gift card id.</td>
+    </tr>
+    <tr>
+        <td><code>amt</code></td>
+        <td>Amount in the program unit to be credited.</td>
+    </tr>
+</table>
+<h2>Cash</h2>
+<p>Perform a POST request to the <a href="https://doc.giift.com/?urls.primaryName=Card" target="_blank"><code>card/credit/&lt;card_id&gt;</code></a>    method.</p>
+<p>Here is the list of parameters:</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>card_id</code></td>
+        <td>The gift card id.</td>
+    </tr>
+    <tr>
+        <td><code>amt</code></td>
+        <td>Amount in cash of the underlying transaction. This will be converted to points before being added to the card.</td>
+    </tr>
+    <tr>
+        <td><code>type</code></td>
+        <td>Should be <strong><code>cash</code></strong>.</td>
+    </tr>
+    <tr>
+        <td><code>exchange_id</code></td>
+        <td>Id of the exchange that will convert a financial value into points. All exchange ids can be retrieved using the method
+            <a href="https://doc.giift.com/?urls.primaryName=Exchange" target="_blank"><code>exchange/around</code></a>.</td>
+    </tr>
+</table>

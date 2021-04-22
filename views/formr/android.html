@@ -1,0 +1,162 @@
+<h1 id="formr-for-android">Formr for Android</h1>
+<p>Android Library to build an Android style Form from a JSON object.<br>The individual form elements can be used independently of the form as well.</p>
+<h3 id="how-do-i-get-started-">How do I get started?</h3>
+<h3 id="gradle-configuration">Gradle Configuration</h3>
+<ul>
+<li>Add the following to your app build.gradle file</li>
+</ul>
+<p>Dependency </p>
+<pre><code> dependencies {
+
+ compile &#39;com.giift:formr:2016.11.+&#39;
+
+ }
+</code></pre><p>The form is capable of handling orientation changes on its own and the values in the form are retained.</p>
+<p>The form can be build via code </p>
+<pre><code>Form form = new Form(Context);
+</code></pre><p>or Added in xml</p>
+<pre><code> &lt;com.giift.formr.Form
+            android:id=&quot;@+id/stripe_form&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;/&gt;
+</code></pre><p>To Initialise the form</p>
+<pre><code>form.Init(json) //example json below
+</code></pre><p>Example JSON Configuration in-order to build a Form</p>
+<pre><code>{
+    &quot;fields&quot;: {
+        &quot;button_choice&quot;: {
+            &quot;label&quot;: &quot;Button Choice Label&quot;,
+            //Thisisthelabeldisplayedfortheelement&quot;label_id&quot;: &quot;&quot;,
+            &quot;label_replace&quot;: [],
+            &quot;id&quot;: &quot;button_choice&quot;,
+            &quot;type&quot;: &quot;buttonchoice&quot;,
+            //typeoffieldtobebuilte.gifvaluewastextaTextfieldwouldbeshown&quot;mandatory&quot;: false,
+            &quot;value&quot;: &quot;fifty&quot;,
+            &quot;group&quot;: null,
+            &quot;order&quot;: 1,
+            &quot;settings&quot;: {
+                &quot;options&quot;: {
+                    &quot;five&quot;: &quot;$ 5&quot;,
+                    //Hereweconfiguretheoptionsforbuttonchoice&quot;ten&quot;: &quot;$ 10&quot;,
+                    &quot;fifty&quot;: &quot;$ 50&quot;
+                },
+                &quot;readonly&quot;: true
+            }
+        },
+        &quot;text&quot;: {
+            &quot;label&quot;: &quot;Standard Text&quot;,
+            &quot;label_id&quot;: &quot;&quot;,
+            &quot;label_replace&quot;: [],
+            &quot;id&quot;: &quot;text&quot;,
+            &quot;type&quot;: &quot;text&quot;,
+            &quot;mandatory&quot;: true,
+            &quot;value&quot;: null,
+            &quot;group&quot;: null,
+            &quot;order&quot;: 21,
+            &quot;settings&quot;: {
+                &quot;error&quot;: {
+                    &quot;label&quot;: &quot;Invalid Text Server Error&quot; // error to be shown on the field
+                }&quot;callback&quot;: {
+                    &quot;on_focus_lost&quot;: &quot;http:\/\/dev.giift.com\/uat\/public\/api\/test\/formr\/callback&quot;, //action to perform on losing focus in this field; the action can be updating the field value or adding a new field below this field etc;
+                    &quot;on_value_changed&quot;: &quot;http:\/\/dev.giift.com\/uat\/public\/api\/test\/formr\/callback&quot;
+                }
+            }
+        }
+    }
+}
+</code></pre><h2 id="input-types">Input types</h2>
+<p>Each of the below mentioned Fields has the following method</p>
+<pre><code>public void SetLabel(String label)
+</code></pre><p>Sets a label above the Field.<br>For Input type Text and TextArea it sets a floating action label</p>
+<pre><code>public void SetError(@Nullable String error)
+</code></pre><p>Sets error with the msg on the Field.</p>
+<pre><code>public void SetHint(String hint)
+</code></pre><p>Sets a hint below the field.</p>
+<h3 id="1-button-choice">1. Button Choice</h3>
+<p>This field allows users to select from a choice of available options</p>
+<p>It can be added through code</p>
+<pre><code>ButtonChoice button = new ButtonChoice(context)
+button.InitOptionsArray(optionsArray) // where optionsArray can be a HashMap&lt;String, String&gt; or ArrayList&lt;Pair&lt;String, String&gt;&gt;
+</code></pre><p>You can also add the button choice using xml</p>
+<pre><code>&lt;com.giift.formr.field.ButtonChoice
+        android:id=&quot;@+id/buttonChoice&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        app:label= &quot; Button Choice Title &quot;  // Title for the Button options
+/&gt;
+</code></pre><pre><code> public void SetSelectedPosition(int position)
+</code></pre><p>Selects option at specified position</p>
+<h3 id="2-card-number">2. Card Number</h3>
+<p>This field allows users to input a credit card number . It also has a button to scan credit card to fetch details.</p>
+<p>It can be added through code</p>
+<pre><code>CardNumber button = new CardNumber (context)
+</code></pre><p>You can also add the button choice using xml</p>
+<pre><code>&lt;com.giift.formr.field.CardNumber
+        android:id=&quot;@+id/card Number&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        app:label= &quot; Card Number Title &quot;  // Title for the Button options
+/&gt;
+</code></pre><pre><code>public boolean Validate()
+</code></pre><p>returns false if invalid credit card number</p>
+<h3 id="3-checkbox">3. Checkbox</h3>
+<p>This adds multi- select checkbox options</p>
+<h3 id="4-cvv">4. Cvv</h3>
+<p>Input field for collecting credit card cvv details</p>
+<h3 id="5-date">5. Date</h3>
+<p>Field to launch DatePicker Dialog.</p>
+<pre><code>public void SetDate(java.util.Date date)
+</code></pre><p>Set a date to be selected</p>
+<pre><code> public java.util.Date GetDate()
+</code></pre><p>Get selected date</p>
+<h3 id="6-day">6. Day</h3>
+<p>Input field for entering day of the month</p>
+<h3 id="7-dropdown">7. Dropdown</h3>
+<p>Provides a list of options.</p>
+<h3 id="8-email">8. Email</h3>
+<p>Input field for entering a email address</p>
+<pre><code>boolean Validate()
+</code></pre><p>validates if email address is valid</p>
+<h3 id="9-month">9. Month</h3>
+<p>Provides a drop-down for selecting a month</p>
+<h3 id="10-number">10. Number</h3>
+<p>Input field for entering a number</p>
+<h3 id="11-onoff">11. Onoff</h3>
+<p>Switch</p>
+<h3 id="12-password">12. Password</h3>
+<p>Input field for entering a password. The input text is encrypted while displaying</p>
+<h3 id="13-personname">13. PersonName</h3>
+<p>Input field for entering a name.</p>
+<h3 id="14-phone">14. Phone</h3>
+<p>Input field for entering a phone number.</p>
+<h3 id="15-postaladdress">15. PostalAddress</h3>
+<p>Input field for entering a address.</p>
+<h3 id="16-slider">16. Slider</h3>
+<p>Slider to select a value.</p>
+<pre><code>public void SetMin(double v)
+</code></pre><p>Set minimum value for slider</p>
+<pre><code>public void SetMax(double v)
+</code></pre><p>Set maximum value for slider</p>
+<pre><code>public void SetStep(double v)
+</code></pre><p>Set slider increment value</p>
+<pre><code>public void SetValue(double v)
+</code></pre><p>Set slider selected value</p>
+<h3 id="17-text">17. Text</h3>
+<p>Material style input textbox. </p>
+<pre><code>public void SetText(String text)
+public void SetText(CharSequence text)
+</code></pre><p>Set text value</p>
+<pre><code>public void SetScannable(boolean scannable)
+</code></pre><p>If set to true; a barcode scanner option is displayed</p>
+<h3 id="18-textarea">18. TextArea</h3>
+<p>Multi line text input</p>
+<h3 id="19-url">19. Url</h3>
+<p>Input field for entering a url</p>
+<h3 id="20-year">20. Year</h3>
+<p>Input field for entering a year number</p>
+<h3 id="21-zip">21. Zip</h3>
+<p>Input field for entering a zipcode</p>
+<h3 id="who-do-i-talk-to-">Who do I talk to?</h3>
+<ul>
+<li>If you have any questions please contact us at <a href="mailto:nicolas.lagier@giift.com">nicolas.lagier@giift.com</a></li>
+</ul>

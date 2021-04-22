@@ -1,0 +1,108 @@
+<h1>Getting information on a report</h1>
+<p>To generate reports, the user needs to know the report id and any query parameters that the report may require.</p>
+<p>When the report id is not known, the user can get the <a href="#" anchor-scroll="list" target="_self">list</a> of all available reports, and then find the desired report.</p>
+If the report id is known, the user can get <a href="#" anchor-scroll="info" target="_self">information</a> about the specific report.</p>
+
+<h2 id = "list">
+	List
+</h2>
+<p>The <a href="https://doc.giift.com/?urls.primaryName=Report" target="_self"><code>/report/list</code></a> method will return a list of all the reports the user has access to, and information coressponding to each report.</p>
+<p>This includes the id and name of the report, and the query parameters needed to execute the report.</p>
+<p>This response can be used to look for the desired report along with the necessary query parameters to generate that report, as described in the example <a href="#" anchor-scroll="example" target="_self">below</a>.</p>
+
+<h2 id = "info">
+	Info
+</h2>
+<p>Performing a GET request on the <a href="https://doc.giift.com/?urls.primaryName=Report" target="_self"><code>/report/info/&lt;report_id&gt;</code></a> method returns the same information as the <a href="http://giift.github.io/api/report.html#_report_list_get" target="_self"><code>/report/list</code></a> method, but only for a specific report.</p>
+<p>An example of the response is shown <a href="#" anchor-scroll="example" target="_self">below</a>.</p>
+<p>This method requires one uri parameter:</p>
+<table class="table table-bordered">
+		<tr>
+			<th>
+				Parameter
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>report_id</code>
+			</td>
+			<td>
+				Id of the required report.
+			</td>
+		</tr>
+</table>
+
+<h2 id = "example">
+	Example
+</h2>
+<p>To get the Age Distribution report, it is necessary to know if any query parameters are required.</p>
+<p>If the id for this report is not known, the user will have to get a <a href="#" anchor-scroll="list" target="_self">list</a> of all the reports and find the id and query parameters corresponding to the Age Distribution report.</p>
+<p>Executing the <code>/report/info/agepie</code> method returns the id, name and fields of this report.</p>
+<p>As it can be seen, the parameters, 'from' and 'to' are mandatory, while the 'timezone' is not. The default values of the query parameters are also given.</p>
+<p>There is another field, 'no_export', which is hidden and not required. The user does not need to provide any information regarding this parameter.</p>
+<p>Using this information, the user can now continue to <a href="#!/giiftloyalty/web/report_execute" target="_self">generate</a> the report for Age Distribution.</p>
+<pre>
+{
+	"id": "agepie",
+	"name": "Age Distribution",
+	"form": {
+		"fields": {
+			"from": {
+				"label": "From",
+				"label_id": "",
+				"label_replace": [],
+				"id": "from",
+				"type": "date",
+				"mandatory": true,
+				"value": "2016-07-01",
+				"group": null,
+				"order": 0,
+				"settings": []
+			},
+			"to": {
+				"label": "To",
+				"label_id": "",
+				"label_replace": [],
+				"id": "to",
+				"type": "date",
+				"mandatory": true,
+				"value": "2016-07-22",
+				"group": null,
+				"order": 1,
+				"settings": []
+			},
+			"timezone": {
+				"label": "Time Zone",
+				"label_id": "",
+				"label_replace": [],
+				"id": "timezone",
+				"type": "dropdown",
+				"mandatory": false,
+				"value": "UTC",
+				"group": null,
+				"order": 2,
+				"settings": []
+			},
+			"no_export": {
+				"label": "",
+				"label_id": "",
+				"label_replace": [],
+				"id": "no_export",
+				"type": "hidden",
+				"mandatory": false,
+				"value": null,
+				"group": null,
+				"order": 3,
+				"settings": []
+			}
+		},
+		"groups": [],
+		"settings": []
+	}
+}
+</pre>
+
+<p>The complete API reference can be found <a href="https://doc.giift.com/?urls.primaryName=Report" target="_self">here</a>.</p>

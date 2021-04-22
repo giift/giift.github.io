@@ -1,0 +1,66 @@
+<h1>
+	Build your catalog
+</h1>
+Whether you already have a redemption catalogue for your customer or you are building one, here are the steps to retrieve all the products from Giift.com and some add-ons to help you filter them.
+<h2 id="complete_buyable_list">
+	Complete list
+</h2>
+<p>
+	Giift.com API allows you to retrieve the entire list of products available for purchase.
+</p>
+<p>
+	In Giift.com we describe a product by its definition (name, image,Term and Conditions) and the different denominations for which this product can be bought.
+</p>
+<p>
+	Perform a post request to the following url: <a href="http://giift.github.io/api/cart.html#buyable_list_get" target="_blank">
+		<code>https://sandbox.giift.com/api/cart/v1/buyable/list>
+	</a> An example of response is shown below.
+</p>
+<p>
+  The call will return a list of product description. The id in this schema is Giift.com internal id called dmo_id sometimes in the rest of the documentation.
+</p>
+<pre>
+  {
+  "147520758000Lmb": {
+    "id": "147520758000Lmb",
+    "type": "card",
+    "type_id": "140390450953bleag",
+    "active": "1",
+    "factory_name": "card",
+    "info": {
+      "usd": {
+        "amount": {
+          "values": [
+           10,
+            25,
+            50,
+            100
+          ],
+          "default": "25",
+          "max": "500",
+          "min": "10"
+        }
+      }
+    },
+    "tnc_id": "1477554585y0A6H",
+    "object_name": "My Everyday Fresh Croissant",
+    "created_at": "1475207580",
+    "updated_at": "1485236222"
+  },
+</pre>
+<p>
+  This call returns the basic information on the product. We can see that this is a Gift Card (factory_name = card) and the most common values are 10, 25, 50 and 100 USD.
+</p>
+<h2 id="categorie_dmo">
+	Filter your products per category
+</h2>
+<p>
+  Perform the post request to the following url: <a href="http://giift.github.io/api/dmo.html#categorie_all__date__get" target="_blank">
+		<code>https://sandbox.giift.com/api/dmo/v1/categorie/all>
+	</a>
+</p>
+<p>
+  To retrieve the details of each category, perdorm the post request on: <a href="http://giift.github.io/api/dmo.html#categories_find_post" target="_blank">
+		<code>https://sandbox.giift.com/api/dmo/v1/categories/find>
+	</a>
+</p>

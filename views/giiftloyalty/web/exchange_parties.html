@@ -1,0 +1,137 @@
+<h1>Exchange merchant units, when I am a merchant</h1>
+<h2>Architecture</h2>
+The typical exchange process is as follow:
+<ol>
+  <li>Client sends exchange request from hotel A points to airline B miles.</li>
+  <li>Giift.com clears merchant A units (miles, points, $, ...).</li>
+  <li>Giift.com buys merchant B units (miles, points, $, ...).</li>
+  <li>Giift.com forwards merchant B units to the client application.</li>
+</ol>
+<img src="images/conversion_architecture.png" class="img-responsive"/>
+<p>This documentation covers steps 2. and 3. For step 1. and 2. have a look <a href="#!/giiftloyalty/web/exchange_customer">here</a>.</p>
+<p>Exchange requires two merchants:
+  <ul>
+    <li>One merchant (A) from which to clear units.</li>
+    <li>One merchant (B) from which to buy units.</li>
+  </ul>
+  We usually recommend our merchants to join both sides, as this will truly contribute to a global exchange network. But this is not mandatory.<br/>
+  It is important to note that:
+  <blockquote><ul><li>the merchant remains in control of the rate at which he wishes to clear and/or sell his units</li>
+    <li>the clearing rate can be different from the selling rate</li></ul></blockquote>
+</p>
+<h2>Clear my units (merchant A)</h2>
+<h3>Querying the card value</h3>
+<p>During the exchange process giift.com needs to be able to query merchant A for the value available on the card.
+  This done through a <code>GET</code> query. The answer should look like this:
+<pre>{
+  "id": "1450839460ihJFs",
+  "user": "140351459645aoxny",
+  "fields": {
+    "value": 253,
+    "expiration": "2012-04-03",
+    "number": "1585749862",
+    "ccv": "yo123"
+  },
+  transactions:[
+    ...
+  ],
+  "created_at": 1450839460,
+  "updated_at": 1451972060
+}</pre>
+Here, the key information is the field <code>fields.value</code>
+</p>
+<h3>Charging(/debiting) the card</h3>
+<p>When debiting the card, giift will send a <code>POST</code> request which looks like this:
+<pre>{
+  "card": {
+    "id":"23456743243532",
+    "pin":"2345"
+  }
+  "amount": 250,
+  "description": "Exchange on Giift.com to merchant B",
+  "metadata": {
+    "transactionId": "45644325fdsgf",
+    ...
+  }
+}</pre>
+Here, the key information are obviously <code>amount</code> and <code>card</code>.
+The card information can be anything that allows merchant A to identify the card in its own database.
+Giift.com is flexible about it.
+The rest is optionnal.
+</p>
+
+<h2>Buy my units (merchant B)</h2>
+<h3>Buy query</h3>
+<p>When Giift.com needs to buy units from a merchant, it will issue the following <code>POST</code> query to an endpoint specified by the merchant before.
+  <pre>{
+  "program_id":"T2000_GIFT_CARD",
+  "amount":42.0,
+  "units":1,
+  "state":"79094867-f6d3-471c-82f6-beec37116e40",
+  "delivery":{
+    "recipients":[
+      {
+        "email":"john.connor@sky.net",
+        "firstName":"John",
+        "lastName":"Connor",
+        "userId":"295D7DBE554B4A17895543AE0ACB4040",
+        "account_number":"15857439862"
+      }
+    ]
+  }
+}</pre>
+  Then, Giift.com will expect the following kind of answer:
+  <pre>{
+  "order_id":"EBAAC1C7-DEDF-4747-85EB-1188F4ED433C",
+  "state":"79094867-f6d3-471c-82f6-beec37116e40"
+  "cards":[
+    {
+      "id":"6F21CB07-9677-4304-B32D-42124ECA399C",
+      "program_id":"T2000_GIFT_CARD"
+      "value":42.0,
+      "status":"active"
+      "card_number":"4444333322221111",
+      "pin":"007"
+    }
+  ]
+}</pre>
+</p>
+<h3>Invoicing</h3>
+<h4>Reconciliation</h4>
+<p>At any point of time, Giift.com needs to be able to query the list of transactions that were performed between two dates specified in UTC time.
+  Giift.com will perform a <code>GET</code> request to an endpoint specified by the merchant before. The answer should look like the following:
+<pre>{
+  "start_date":"2016-01-01T01:00:00Z",
+  "end_date":"2016-08-11T08:35:18Z",
+  "transactions":[
+    {
+      "date":"2016-06-12T01:00:00Z",
+      "program_id":"T2000_GIFT_CARD"
+      "value":42
+      "units":1.0
+      "total":42.0
+      "order_id":"EBAAC1C7-DEDF-4747-85EB-1188F4ED433C"
+    },
+    ...
+  ],
+  "total":326
+  "unit":"USD"
+}</pre>
+</p>
+<h4>Prepaid</h4>
+<p>When working on a prepaid basis, Giift.com needs to be able to query in real-time the remaining amount on the prepaid account.
+  To do so, Giift.com will perform a <code>GET</code> query on an endpoint provided by the merchant before. The answer should look like the following:
+<pre>{
+  "balance":25750,
+  "unit":"USD"
+}</pre></p>
+<h2>Security</h2>
+<p>Both, for buying and clearing units, Giift.com prefers working with <a href="https://tools.ietf.org/html/rfc6749#section-4.4" target="_blank">OAuth 2.0 client credentials</a>,
+as this is particularly well adapted for server to server communication. In short it works like this:
+<ol>
+  <li>The merchant issues a client_id and client_secret for Giift.com</li>
+  <li>Giift.com uses this client_id and client_secret to get a short lived access token (typically 1h)</li>
+  <li>Giift.com puts this access token in the header of each subsequent request</li>
+  <li>Once the token expires, Giift.com will fetch a new one with step 2.</li>
+</ol>
+</p>

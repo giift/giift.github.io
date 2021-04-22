@@ -1,0 +1,10 @@
+ <ul class="nav list-group">
+    <li class="list-group-item" ng-repeat="sidebar in sidebarContents">
+        <strong>{{sidebar.title}}</strong>
+        <ul>
+            <li ng-show="sidebar.subnav != ''" ng-repeat='suboption in sidebar.subnav'>
+                <a ui-external="{{suboption.link}}">{{suboption.title}}</a>
+            </li>
+        </ul>
+    </li>
+</ul>

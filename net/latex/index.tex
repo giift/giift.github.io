@@ -1,0 +1,67 @@
+\subsection*{Required Files}
+
+
+\begin{DoxyEnumerate}
+\item App.\+config
+\item Giift\+A\+P\+I\+C\+Sharp.\+dll
+\item Newtonsoft.\+Json.\+dll
+\item Rest\+Sharp.\+dll
+\item The executable file 
+
+
+\end{DoxyEnumerate}
+
+\subsection*{Procedures}
+
+
+\begin{DoxyEnumerate}
+\item Place the required files in the same directory.
+\item Edit the App.\+config file details to suit the program.
+\item Click on the executable file to run the program. 
+
+
+\end{DoxyEnumerate}
+
+\subsection*{Editing the App.\+config file}
+
+The App.\+config file will look similar to this format\+:
+
+\begin{DoxyVerb}<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <section 
+            name="appSettings" 
+            type="System.Configuration.AppSettingsSection, System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" 
+            />
+    </configSections>
+  <appSettings>
+    <add key ="base_url" value ="https://sandbox.giift.com/" />
+    <add key="client_id" value ="My Client ID" />
+    <add key ="client_secret" value ="My Client Secret" />
+    <add key="grant_type" value ="client_credentials" />
+    <add key="scope" value ="pos.read pos.write cart" />
+  </appSettings>
+</configuration>
+\end{DoxyVerb}
+
+
+
+\begin{DoxyEnumerate}
+\item Replace the phrase \char`\"{}\+My Client I\+D\char`\"{} excluding the quotation marks with your relevant Client ID.
+\item Replace the phrase \char`\"{}\+My Client Secret\char`\"{} excluding the quotation marks with your relevant Client Secret.
+\item Save the file.
+\end{DoxyEnumerate}
+
+\section*{Gift Card P\+OS Functionality}
+
+\subsection*{\href{class_giift_a_p_i_c_sharp_1_1_giift_a_p_i_client.html#a3cc1b6eadcdf5fea49f33b591b101782}{\tt Check Balance}}
+
+Requires card number to generate card details.
+
+\subsection*{\href{class_giift_a_p_i_c_sharp_1_1_giift_a_p_i_client.html#a8324e05441c2f9fbeedfb4ca4a5589ab}{\tt Debit Amount from Card}}
+
+Requires card id, amount of money to be deducted and any extra details to generate the transaction details.
+
+\subsection*{\href{class_giift_a_p_i_c_sharp_1_1_giift_a_p_i_client.htmla09e5a5e4af058ddc6ee72ebf8073af50}{\tt Activate Card}}
+
+Requires program id, amount of money to be credited into the card, card number and any extra details to be included to generate the activation details of the card. 

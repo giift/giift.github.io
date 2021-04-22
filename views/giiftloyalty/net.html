@@ -1,0 +1,151 @@
+<h1><a id="Installation_1"></a>Installation</h1>
+<p>Operation of using the .Net.</p>
+<p>Firstly, obtain the required files and follow the procedures.</p>
+<h2><a id="Required_Files_3"></a>Required Files</h2>
+<ol>
+<li>App.config</li>
+<li>GiiftAPICSharp.dll</li>
+<li>Newtonsoft.Json.dll</li>
+<li>RestSharp.dll</li>
+<li>The executable file(.exe)</li>
+</ol>
+<hr>
+<h2><a id="Procedures_14"></a>Procedures</h2>
+<ol>
+<li>Place the required files in the same directory.</li>
+<li>Edit the App.config file details to suit the program.</li>
+<li>Click on the executable file to run the program.</li>
+</ol>
+<hr>
+<h2><a id="Editing_the_Appconfig_file_23"></a>Editing the App.config file</h2>
+<p>The App.config file will look similar to this format:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;configuration&gt;
+    &lt;configSections&gt;
+        &lt;section
+            name=&quot;appSettings&quot;
+            type=&quot;System.Configuration.AppSettingsSection, System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;
+            /&gt;
+    &lt;/configSections&gt;
+  &lt;appSettings&gt;
+    &lt;add key =&quot;base_url&quot; value =&quot;https://sandbox.giift.com/&quot; /&gt;
+    &lt;add key=&quot;client_id&quot; value =&quot;My Client ID&quot; /&gt;
+    &lt;add key =&quot;client_secret&quot; value =&quot;My Client Secret&quot; /&gt;
+    &lt;add key=&quot;grant_type&quot; value =&quot;client_credentials&quot; /&gt;
+    &lt;add key=&quot;scope&quot; value =&quot;pos.read pos.write cart&quot; /&gt;
+  &lt;/appSettings&gt;
+&lt;/configuration&gt;
+</code></pre>
+<ol>
+<li>Replace the phrase “My Client ID” excluding the quotation marks with your relevant Client ID.</li>
+<li>Replace the phrase “My Client Secret” excluding the quotation marks with your relevant Client Secret.</li>
+<li>Save the file.</li>
+</ol>
+<h1><a id="Gift_Card_POS_Functionality_51"></a>Gift Card POS Functionality</h1>
+<h2><a id="Check_Balanceclass_giift_a_p_i_c_sharp_1_1_giift_a_p_i_clienthtmla3cc1b6eadcdf5fea49f33b591b101782_53"></a><a href="net/html/class_giift_a_p_i_c_sharp_1_1_giift_a_p_i_client.html#a3cc1b6eadcdf5fea49f33b591b101782">Check Balance</a></h2>
+<p>To generate the card details.</p>
+<p>List of parameters:</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cardNumber</td>
+<td>The card number that is being registered to the program</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="Successful_response_62"></a>Successful response</h3>
+<p>Upon successful response, its will return the card details of the card with the status and message code.</p>
+<pre><code>Status: Success
+Message: 200
+Card Details : *The generated card details*
+</code></pre>
+<h3><a id="Error_response_70"></a>Error response</h3>
+<p>If there is a error, there will be no generation of the card details and the status and message error will be displayed.</p>
+<pre><code>Status: Error
+Message: *The error message*
+</code></pre>
+<h2><a id="Debit_Amount_from_Cardclass_giift_a_p_i_c_sharp_1_1_giift_a_p_i_clienthtmla8324e05441c2f9fbeedfb4ca4a5589ab_77"></a><a href="net/html/class_giift_a_p_i_c_sharp_1_1_giift_a_p_i_client.html#a8324e05441c2f9fbeedfb4ca4a5589ab">Debit Amount from Card</a></h2>
+<p>To generate the transaction details.</p>
+<p>List of parameters:</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>card_id</td>
+<td>The card id from the card</td>
+</tr>
+<tr>
+<td>amt</td>
+<td>The amount of money to be deducted from the card</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Additional information if there is any to be included</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="Successful_response_88"></a>Successful response</h3>
+<p>Upon successful response, its will return the transaction details of the card with the status and message code.</p>
+<pre><code>Status: Success
+Message: 200
+Transaction Details : *The generated transaction details*
+</code></pre>
+<h3><a id="Error_response_96"></a>Error response</h3>
+<p>If there is a error, there will be no generation of the transaction details and the status and message error will be displayed.</p>
+<pre><code>Status: Error
+Message: *The error message*
+</code></pre>
+<h2><a id="Activate_Cardclass_giift_a_p_i_c_sharp_1_1_giift_a_p_i_clienthtmla09e5a5e4af058ddc6ee72ebf8073af50_103"></a><a href="net/html/class_giift_a_p_i_c_sharp_1_1_giift_a_p_i_client.html#a09e5a5e4af058ddc6ee72ebf8073af50">Activate Card</a></h2>
+<p>To generate the activation details of the card.</p>
+<p>List of parameters:</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dmo_id</td>
+<td>Program ID</td>
+</tr>
+<tr>
+<td>amt</td>
+<td>The amount of money to be credited into the card</td>
+</tr>
+<tr>
+<td>state</td>
+<td>Optional external id that will be visible in the response. Very useful to reconcile with merchant.</td>
+</tr>
+<tr>
+<td>card_number</td>
+<td>A array of Card Numbers. The card number array cannot be empty</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Additional information if there is any to be included</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="Successful_response_116"></a>Successful response</h3>
+<p>Upon successful response, its will return the activation details of the card with the status and message code.</p>
+<pre><code>Status: Success
+Message: 200
+Activation Details : *The generated activation details*
+</code></pre>
+<h3><a id="Error_response_124"></a>Error response</h3>
+<p>If there is a error, there will be no generation of the activation details and the status and message error will be displayed.</p>
+<pre><code>Status: Error
+Message: *The error message*</code></pre>

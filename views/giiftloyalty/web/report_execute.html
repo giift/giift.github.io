@@ -1,0 +1,130 @@
+<h1>Generating reports</h1>
+<p>To execute a report, the user has to know the report id and the query parameters required for that report.</p>
+<p>If the report id is not known, performing a GET request on the <a href="https://doc.giift.com/?urls.primaryName=Report" target="_blank"><code>/report/list</code></a> method will give a list of the reports the user has access to, along with the report id and query parameters.</p>
+<p>Otherwise, querrying <a href="https://doc.giift.com/?urls.primaryName=Report" target="_blank"><code>/report/info/&lt;report_id&gt;</code></a> will generate all the query parameters of that report.</p>
+<p>More information on how to use these methods can be found <a href="#!/giiftloyalty/web/report_info" target="_self">here</a>.</p>
+
+<h2>Execute</h2>
+<p>Executing a report will generate the name, columns, data, and renderings for the specified report, as shown in the example <a href="#" anchor-scroll="example" target="_self">below</a>.</p>
+<p>The columns consist of the column names, keys, and may contain additional information such as the type and unit of that column.</p>
+<p>The renderings state the preferred format of the report, such as a bar graph. However, the user is free to customize and render to other graphs.</p>
+<p>This can be done easily as the renderings also provide keys for the x and y axes, which correspond to the columns and data.</p>
+<p>To generate this response, perform a GET request on the <a href="https://doc.giift.com/?urls.primaryName=Report" target="_blank"><code>/report/execute/&lt;report_id&gt;</code></a> method.</p>
+<p>A uri parameter must be given:</p>
+<table class="table table-bordered">
+		<tr>
+			<th>
+				Parameter
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>report_id</code>
+			</td>
+			<td>
+				Id of the required report.
+			</td>
+		</tr>
+</table>
+<p>This method may also require query parameters for some reports. Information on how to get these parameters can be found <a href="https://doc.giift.com/?urls.primaryName=Report" target="_blank">here</a>.</p>
+<p>Commonly required query parameters are:</p>
+<table class="table table-bordered">
+		<tr>
+			<th>
+				Parameter
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>from</code>
+			</td>
+			<td>
+				The default start date is set to the first of the month.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>to</code>
+			</td>
+			<td>
+				The default end date is set to the current date.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>timezone</code>
+			</td>
+			<td>
+				The default time zone is set to UTC.
+			</td>
+		</tr>
+</table>
+
+<h3 id="example">
+	Example
+</h3>
+<p>To see the Age Distribution of users, the user will have to provide the report id and query parameters.</p>
+<p>A walk-through on how to get the report id and query parameteres can be found <a href="https://doc.giift.com/?urls.primaryName=Report" target="_blank">here</a>.</p>
+<p>The following is a response of performing a GET request on <code>/report/execute/agepie?from=2016-07-01&to=2016-07-22&timezone=UTC</code>:</p>
+<pre>
+{
+	"name": "Age Distribution",
+	"columns": [
+		{
+			"key": "age",
+			"type": "string",
+			"name": "Age Group"
+		},
+		{
+			"key": "val",
+			"type": "string",
+			"name": "Value",
+			"unit": "%"
+		}
+	],
+	"data": [
+		[
+			"18-34",
+			40
+		],
+		[
+			"35-49",
+			35
+		],
+		[
+			"50-100",
+			25
+		]
+	],
+	"renderings": [
+		{
+			"type": "pie",
+			"xAxis": {
+				"key": "age"
+			},
+			"y1Axis": [
+				{
+					"key": "val"
+				}
+			]
+		}
+	]
+}
+</pre>
+<p>The keys for each column correspond to the data. For instance, the first value in the data array, "18-34", relates to the "age" key, while the second value, "250", relates to the "val" key.</p>
+<p>The renderings state the preferred type of graph, which is a pie chart here, and also provide the keys for the different axes.</p>
+<p>This information can be used to create a pie chart:</p>
+
+<img src="images/report_agepie.png" width="700" height="450" />
+
+<p>The user can also customize and create different charts:</p>
+
+<img src="images/report_agebar.png" width="700" height="450" />
+
+<p>The complete API reference can be found <a href="https://doc.giift.com/?urls.primaryName=Report" target="_blank">here</a>.</p>

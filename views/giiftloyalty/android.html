@@ -1,0 +1,269 @@
+<h1><a id="Adding_the_sdk_to_your_app_0"></a>Adding the sdk to your app</h1>
+<p>First create an account on <a href="https://jitpack.io/">jitpack.io</a> - Your account page is where you will get your access token and give permissions to bitbucket.</p>
+<p>Then add your authToken in <code>$HOME/.gradle/gradle.properties</code>:</p>
+<pre><code class="language-groovy">authToken=get_yours_from_Jitpack.io
+</code></pre>
+<p>Your root <code>build.gradle</code> file should look like this. You don’t need to change <code>username authToken</code>:</p>
+<pre><code class="language-groovy"><span class="hljs-comment">// not buildscript</span>
+repositories {
+        google()
+        jcenter()
+        maven {
+            url <span class="hljs-string">"https://jitpack.io"</span>
+            credentials { username authToken }
+        }
+    }
+</code></pre>
+<p>In your app <code>build.gradle</code> file add:</p>
+<pre><code class="language-groovy">dependencies {
+    compile <span class="hljs-string">'org.bitbucket.giiftalldev:giiftsdk-android-uat:v0.5.1'</span>
+}
+</code></pre>
+<h1><a id="Environment_25"></a>Environment</h1>
+<p>Setup your client id and client secret and content authority by adding string resources to your app.<br>
+For instance, in <code>app/src/main/res/values/technicals.xml</code> have the folowing:</p>
+<pre><code class="language-xml"><span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">resources</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- This should be specific to your app --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">string</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"content_authority"</span> <span class="hljs-attribute">translatable</span>=<span class="hljs-value">"false"</span>&gt;</span>com.giift.my.app<span class="hljs-tag">&lt;/<span class="hljs-title">string</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Check with your account manager for your real app id and secret --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">string</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"giift_client_id"</span>&gt;</span>my_app_id<span class="hljs-tag">&lt;/<span class="hljs-title">string</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">string</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"giift_client_secret"</span>&gt;</span>my_app_secret<span class="hljs-tag">&lt;/<span class="hljs-title">string</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">resources</span>&gt;</span>
+</code></pre>
+<h1><a id="Link_with_account_manager_39"></a>Link with account manager</h1>
+<p>Add the following to your <code>AndroidManifest.xml</code></p>
+<pre><code class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-title">service</span>
+            <span class="hljs-attribute">android:name</span>=<span class="hljs-value">".sdkapp.net.AuthenticatorService"</span>
+            <span class="hljs-attribute">android:exported</span>=<span class="hljs-value">"true"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">intent-filter</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">action</span> <span class="hljs-attribute">android:name</span>=<span class="hljs-value">"android.accounts.AccountAuthenticator"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">intent-filter</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-title">meta-data</span>
+                <span class="hljs-attribute">android:name</span>=<span class="hljs-value">"android.accounts.AccountAuthenticator"</span>
+                <span class="hljs-attribute">android:resource</span>=<span class="hljs-value">"@xml/authenticator"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">service</span>&gt;</span>
+</code></pre>
+<p>Have the following <code>authenticator.xml</code> file in your xml resources:</p>
+<pre><code class="language-xml"><span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">account-authenticator</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">"http://schemas.android.com/apk/res/android"</span>
+                       <span class="hljs-attribute">android:accountType</span>=<span class="hljs-value">"@string/content_authority"</span>
+                       <span class="hljs-attribute">android:label</span>=<span class="hljs-value">"@string/app_name"</span>
+                       <span class="hljs-attribute">android:icon</span>=<span class="hljs-value">"@mipmap/ic_launcher"</span>
+                       <span class="hljs-attribute">android:smallIcon</span>=<span class="hljs-value">"@mipmap/ic_launcher"</span>/&gt;</span>
+</code></pre>
+<p>Make sure that content_authority (See environment section) and the app_name are defined in the app strings. Also make sure that icon and smallIcon point to real image assets.</p>
+<p>Add the following files to your app:<br>
+<code>AuthenticatorService.java</code></p>
+<pre><code class="language-java"><span class="hljs-keyword">package</span> com.giift.net;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AuthenticatorService</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">com</span>.<span class="hljs-title">giift</span>.<span class="hljs-title">sdk</span>.<span class="hljs-title">net</span>.<span class="hljs-title">AuthenticatorService</span> </span>{
+
+  <span class="hljs-comment">/**
+   *
+   */</span>
+  <span class="hljs-annotation">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">super</span>.onCreate();
+    <span class="hljs-keyword">this</span>.authenticator_ = <span class="hljs-keyword">new</span> Authenticator(<span class="hljs-keyword">this</span>);
+  }
+}
+</code></pre>
+<p><code>Authenticator.java</code></p>
+<pre><code class="language-java"><span class="hljs-keyword">package</span> com.giift.net;
+
+<span class="hljs-keyword">import</span> android.accounts.AccountAuthenticatorResponse;
+<span class="hljs-keyword">import</span> android.accounts.NetworkErrorException;
+<span class="hljs-keyword">import</span> android.content.Context;
+<span class="hljs-keyword">import</span> android.os.Bundle;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Authenticator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">com</span>.<span class="hljs-title">giift</span>.<span class="hljs-title">sdk</span>.<span class="hljs-title">net</span>.<span class="hljs-title">Authenticator</span> </span>{
+
+  <span class="hljs-comment">/**
+   * Simple constructor
+   */</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Authenticator</span><span class="hljs-params">(Context context)</span> </span>{
+    <span class="hljs-keyword">super</span>(context);
+  }
+
+  <span class="hljs-comment">/**
+   * Take to Login Activity
+   */</span>
+  <span class="hljs-annotation">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Bundle <span class="hljs-title">addAccount</span><span class="hljs-params">(AccountAuthenticatorResponse response,
+                           String accountType,
+                           String authTokenType,
+                           String[] requiredFeatures,
+                           Bundle options)</span>
+      <span class="hljs-keyword">throws</span> NetworkErrorException </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+  }
+}
+</code></pre>
+<h2><a id="Server_url_116"></a>Server url.</h2>
+<p>You can change which server you are using by making a call to <code>Urls.instance(context).SetUrls(apiUrl, assetUrl);</code></p>
+<h1><a id="Init_Application_119"></a>Init Application</h1>
+<p>Put this in the Application file of your app:</p>
+<pre><code class="language-java">com.giift.sdk.io.wallet.User.InitTokenAuthentication(<span class="hljs-keyword">this</span>);
+com.giift.formr.io.TheOkHttpClient.SetInstance(com.giift.sdk.io.TheOkHttpClient.GetInstance());
+</code></pre>
+<h1><a id="Sample_application_126"></a>Sample application</h1>
+<p>The sdk comes with a sample application which shows how to use the different parts of the sdk.<br>
+Do not hesitate to refer to it frequently.</p>
+<h1><a id="User_authentication_130"></a>User authentication</h1>
+<h2><a id="Login_131"></a>Login</h2>
+<pre><code class="language-java">com.giift.sdk.io.wallet.User.LoginAsync(context, email, password);
+</code></pre>
+<p>The result will be broadcasted on <code>com.giift.sdk.io.wallet.User.Authenticate.BROADCAST_ACTION</code>.<br>
+The user will be registered in the account manager of the underlying android device.</p>
+<h2><a id="Registration_138"></a>Registration</h2>
+<pre><code class="language-java">com.giift.sdk.io.wallet.User.SignUpAsync(Context context,
+                                 String email,
+                                 String password,
+                                 String countryCode);
+</code></pre>
+<p>The result will be broadcasted on <code>com.giift.sdk.io.wallet.User.Authenticate.BROADCAST_ACTION</code>.<br>
+The user will be registered in the account manager of the underlying android device.</p>
+<h2><a id="Logout_148"></a>Logout</h2>
+<p>There should not be any logout button directly in the app. Logout should be performed directly from<br>
+the account manager in the settings of the android device.</p>
+<h1><a id="Data_152"></a>Data</h1>
+<p>All data that arrives and leaves the application is stored in local storage through a <code>ContentProvider</code>.<br>
+The content of each table and the uri to access it is available in the classes in the namespace <code>com.giift.sdk.data</code>.<br>
+For example, to fetch the list of coupons linked to a specific <code>dmoId</code>, use a cursor loader:</p>
+<pre><code class="language-java">String[] projection = {
+  com.giift.sdk.data.Coupon._ID,
+  com.giift.sdk.data.Coupon.COLUMN_COUPON_ID,
+  com.giift.sdk.data.Coupon.COLUMN_NAME,
+  com.giift.sdk.data.Coupon.COLUMN_LINK,
+  com.giift.sdk.data.Coupon.COLUMN_START_DATE,
+  com.giift.sdk.data.Coupon.COLUMN_END_DATE,
+  com.giift.sdk.data.Coupon.COLUMN_CODE
+};
+Uri uri = com.giift.sdk.data.Coupon.BuildUriFromObject(context, dmoId);
+loader = <span class="hljs-keyword">new</span> android.support.v4.content.CursorLoader(context, uri, projection, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+</code></pre>
+<blockquote>
+<p>Data should always be accessed through the <code>ContentProvider</code>. But the content provider will not<br>
+populate itself magically, so unless using a fragment which already does it, calls should be made<br>
+to the server to populate those tables. This is explained in the next section.</p>
+</blockquote>
+<h1><a id="Server_operations_173"></a>Server operations</h1>
+<p>All available server operations are available in the package <code>com.giift.sdk.io</code>.<br>
+For instance, to fetch the latest available coupons for a <code>dmoId</code>:</p>
+<pre><code class="language-java">com.giift.sdk.io.wallet.Coupon.UpdateFromDmoAsync(context, dmoId);
+</code></pre>
+<p>Once the sdk receives the coupons from the server it will update the <code>ContentProvider</code>, therefore any<br>
+<code>Cursor</code> that is listening to this data will be notified with the latest changes. And the UI can be<br>
+updated automatically.</p>
+<blockquote>
+<p>When using directly the provided <code>Fragment(s)</code>, it is not necessary to call those methods as<br>
+the fragment will do it.</p>
+</blockquote>
+<h1><a id="UI_186"></a>UI</h1>
+<h2><a id="Adapter_187"></a>Adapter</h2>
+<p>The sdk contains a collection of adapters that can be used to populate list views in the application.</p>
+<h3><a id="CartItemAdapter_189"></a>CartItemAdapter</h3>
+<p>List of items for a shopping cart.</p>
+<h3><a id="ConversionsAdapter_191"></a>ConversionsAdapter</h3>
+<p>List of conversions</p>
+<h3><a id="CountryAdapter_193"></a>CountryAdapter</h3>
+<p>List of countries. Typically used in a dropdown.</p>
+<h3><a id="CouponAdapter_195"></a>CouponAdapter</h3>
+<p>List of coupons.</p>
+<h3><a id="DmoAdapter_197"></a>DmoAdapter</h3>
+<p>List of dmos. Typically used in a catalog/brand index.</p>
+<h3><a id="LocationAdapter_199"></a>LocationAdapter</h3>
+<p>List of geographical locations with display of name, adress, phone number and call to action for<br>
+making a phone call directly.</p>
+<h3><a id="NewsAdapter_202"></a>NewsAdapter</h3>
+<p>List of news.</p>
+<h3><a id="OrderAdapter_204"></a>OrderAdapter</h3>
+<p>List of shopping orders.</p>
+<h3><a id="OrderItemAdapter_206"></a>OrderItemAdapter</h3>
+<p>List of items in a shopping order.</p>
+<h3><a id="PaymentProviderAdapter_208"></a>PaymentProviderAdapter</h3>
+<p>List of payment methods available to fulfill an order.</p>
+<h3><a id="ProductAdapter_210"></a>ProductAdapter</h3>
+<p>List of products. (bestdeals)</p>
+<h3><a id="TransactionAdapter_212"></a>TransactionAdapter</h3>
+<p>List of transactions.</p>
+<h2><a id="Fragments_215"></a>Fragments</h2>
+<p>The sdk contains a list of fragments. Whenever there is a fragment available, it is recommended to<br>
+use the fragment as the fragment will take care of the connection with the backend and will update<br>
+itself whenever the data is udpated.</p>
+<h3><a id="BarcodeFragment_220"></a>BarcodeFragment</h3>
+<p>Fragment displaying the barcode attached to a card.</p>
+<p>Argument required:</p>
+<ul>
+<li><code>com.giift.sdk.data.Card.ID</code>: Id of the card for which to display the barcode.</li>
+</ul>
+<h3><a id="ConversionListFragment_227"></a>ConversionListFragment</h3>
+<p>Fragment displaying the list of conversions(/exchanges) related to a dmo.</p>
+<p>Argument required:</p>
+<ul>
+<li><code>com.giift.sdk.data.Dmo.ID</code>: Id of the dmo for which to display the exchanges.</li>
+</ul>
+<p>Parent Activity should implement <code>ConversionListFragment.Callback</code> to be notified when a user taps on<br>
+a specific conversion.</p>
+<h3><a id="CouponListFragment_237"></a>CouponListFragment</h3>
+<p>Fragment displaying a list of coupons (/offers) related to a dmo.</p>
+<p>Argument required:</p>
+<ul>
+<li><code>com.giift.sdk.data.Dmo.ID</code>: Id of the dmo for which to display the coupons.</li>
+<li>(optional) <code>com.giift.sdk.data.Coupon.COLUMN_TYPE</code>: Returns a list matching the argument type.</li>
+</ul>
+<p>Parent Activity should implement <code>CouponListFragment.Callback</code> to be notified when a user taps on<br>
+a specific conversion.</p>
+<h5><a id="Background_Colors_248"></a>Background Colors</h5>
+<p>The background colors will be the list position mod number of colors.</p>
+<pre><code class="language-groovy">    Utils.backgrounds = <span class="hljs-keyword">new</span> <span class="hljs-typename">int</span>[]{R.drawable.blue, R.drawable.red, R.drawable.orange}; 
+    <span class="hljs-comment">// will alternate blue, red, orange, blue, red orange, etc.</span>
+</code></pre>
+<h3><a id="NewsListFragment_255"></a>NewsListFragment</h3>
+<h3><a id="ProductFragment_257"></a>ProductFragment</h3>
+<p>Fragment displaying the details of a product.</p>
+<p>Required arguments are:</p>
+<ul>
+<li><code>com.giift.sdk.io.Product.ID</code>: Product Id</li>
+<li><code>POSITION</code>: put 0</li>
+</ul>
+<h3><a id="ProductListFragment_265"></a>ProductListFragment</h3>
+<p>Fragment displaying a list of products related to a dmo.</p>
+<p>Argument required:</p>
+<ul>
+<li><code>com.giift.sdk.data.Dmo.ID</code>: Id of the dmo for which to display products.</li>
+</ul>
+<p>Parent Activity should implement <code>ProductListFragment.Callback</code> to be notified when a user taps on a specific product.</p>
+<h3><a id="TransactionsFragment_274"></a>TransactionsFragment</h3>
+<p>Fragment displaying the list of transactions attached to a card.</p>
+<p>Argument required:</p>
+<ul>
+<li><code>com.giift.sdk.data.Card.ID</code>: Id of the card for which to display the transactions.</li>
+</ul>
+<h3><a id="MyProfileFragment_281"></a>MyProfileFragment</h3>
+<p>Change the default NYC image with either methods.<br>
+Programmatically:</p>
+<pre><code class="language-java">MyProfileFragment frag = <span class="hljs-keyword">new</span> MyProfileFragment(); 
+frag.setProfileImageResourceId(R.drawable.your_drawable_image);
+</code></pre>
+<p>Directly with image:</p>
+<ul>
+<li>Create <code>Drawable</code> folders for your desired image. Name it <code>home_image2</code></li>
+<li>Mipmap will NOT work.</li>
+<li>IMPORTANT: To cover all device types, have an image in each <code>Drawable</code> folder - hdpi, mdpi, xhdpi, xxhdpi, xxxhdpi.</li>
+</ul>
+<p>To hide the banner:</p>
+<pre><code class="language-java"><span class="hljs-keyword">this</span>.imageHeader_ = findViewById(R.id.image_header);
+
+ViewGroup.LayoutParams params = imageHeader_.getLayoutParams();
+params.height = <span class="hljs-number">0</span>;
+</code></pre>
+<h4><a id="Currency_and_country_selection_301"></a>Currency and country selection</h4>
+<p>Those 2 items take their values from the database. So, if nothing was inserted in Curency and Country tables nothing will show. To initialize it with <a href="http://Giift.com">Giift.com</a> data call respectively:</p>
+<pre><code class="language-java">com.giift.sdk.io.wallet.Country.UpdateAllAsync();
+</code></pre>
+<p>and</p>
+<pre><code class="language-java">com.giift.sdk.io.wallet.Currency.UpdateAllAsync();
+</code></pre>

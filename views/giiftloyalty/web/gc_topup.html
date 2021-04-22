@@ -1,0 +1,24 @@
+<h1>Topup a gift card</h1>
+<p>There are 2 ways to topup a gift card. The <a href="#" anchor-scroll="express" target="_self">express</a> allows adding value
+    to a card by a single call. The <a href="#" anchor-scroll="advanced" target="_self">advanced</a> method is more complicated,
+    but it gives a fine control on every step of the process of adding value to a card.</p>
+<h2 id="express">Express</h2>
+<p>This method only works if you have a retailer account which allows post paid billing or you have a prepaid account. For on
+    the fly payments, using the dongle, paypal or similar payment methods, you need to use the <a href="#" anchor-scroll="advanced"
+        target="_self">advanced</a> method.</p>
+<p>If you don't have access to it, but you are interested, please contact your account manager.</p>
+<p>Perform a POST request to the <a href="https://doc.giift.com/?urls.primaryName=Card" target="_blank"><code>card/credit/&lt;card_id&gt;</code></a>    method.</p>
+<p>Parameters are as follow:</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>amt</code></td>
+        <td>Amount in the card currency to be credited.</td>
+    </tr>
+</table>
+<h2 id="advanced">Advanced</h2>
+<p>Using the cart api, it is possible to control every step of the topup process. It is not fully documented yet, but if you
+    need it urgently, please <a href="mailto:development@giift.com">contact us</a>.</p>

@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['state',['State',['../class_giift_a_p_i_c_sharp_1_1_activation_details.html#a531e51763af8466e267f7299ab132fd5',1,'GiiftAPICSharp.ActivationDetails.State()'],['../class_giift_a_p_i_c_sharp_1_1_user_creation_details.html#ac50fa465a595ee0c99ce33309b61dbe2',1,'GiiftAPICSharp.UserCreationDetails.State()']]],
+  ['status',['Status',['../class_giift_a_p_i_c_sharp_1_1_activation_query.html#ab811b360a3ccb4bbcaabe33aaac00bc4',1,'GiiftAPICSharp.ActivationQuery.Status()'],['../class_giift_a_p_i_c_sharp_1_1_card_details.html#a25f3d7741d50c4be347ca25972fb6ce1',1,'GiiftAPICSharp.CardDetails.Status()'],['../class_giift_a_p_i_c_sharp_1_1_card_query.html#af75ace779849f5298e4343f6bb50f589',1,'GiiftAPICSharp.CardQuery.Status()'],['../class_giift_a_p_i_c_sharp_1_1_transaction_query_response.html#ab312fb4e4842fece2d5221235e51771a',1,'GiiftAPICSharp.TransactionQueryResponse.Status()'],['../class_giift_a_p_i_c_sharp_1_1_user_creation_query.html#a9047d8e190092e890d6d39aa8138a4b6',1,'GiiftAPICSharp.UserCreationQuery.Status()'],['../class_giift_a_p_i_c_sharp_1_1_user_look_up_query.html#a0e0858d7e1576692f53803749ee822fc',1,'GiiftAPICSharp.UserLookUpQuery.Status()']]],
+  ['statusname',['StatusName',['../class_giift_a_p_i_c_sharp_1_1_card_details.html#a4296f6659c146014b79acc00f551c6af',1,'GiiftAPICSharp::CardDetails']]],
+  ['subscriptor',['Subscriptor',['../class_giift_a_p_i_c_sharp_1_1_user_creation_details.html#a039a0196cc584fd2443cc0686e0ba01d',1,'GiiftAPICSharp::UserCreationDetails']]]
+];

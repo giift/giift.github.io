@@ -1,0 +1,21 @@
+<h1>Retrieving FX conversion rates</h1>
+<p>To retrieve the FX conversions between currency pairs, perform a <code>GET</code> request to
+    <code>/api/fx/v0/latest</code> endpoint</p>
+<p>Here is the list of query parameters:</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td><code>from</code></td>
+        <td>The comma separated currency pairs in ISO 4217 format to convert from</td>
+        <td>usd,sgd</td>
+    </tr>
+    <tr>
+        <td><code>to</code></td>
+        <td>The comma separated currency pairs in ISO 4217 format to convert to</td>
+        <td>eur,kes</td>
+    </tr>
+</table>

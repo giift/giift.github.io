@@ -1,0 +1,129 @@
+<h1>
+	Buy Top up for a prepaid telephone number
+</h1>
+<p>
+	As for any object in giift.com, in order to purchase a telephone top-up, you must first retrieve the details of the program. How much top up I get in dollar value for how much dollar?
+</p>
+<p>
+  This information is found in the buyables list similarly to what is done in Gift Cards or Merchandises. Let's review the following example:
+</p>
+<pre>
+{
+	"underlying_id": "1564726098fMOLH",
+	"type": "topup",
+	"name": "Etisalat Egypt EGP 10.00",
+	"imgs": [
+		"https://d16a8a62orsrve.cloudfront.net/assets/img/card_tpl/1565930906kUki1.png"
+	],
+	"units": [
+		{
+			"unit": "aed",
+			"type": "fixed",
+			"value": 10,
+			"price": 2.43
+		}
+	],
+	"bonus": null,
+	"fees": null,
+	"tc": "<p>Customer Care Number: +20 1111 234 333</p>",
+	"eta": null,
+	"description": "<p>Immediate Top-up of EGP 10.00 on a Etisalat Egypt account.</p>",
+	"categories": [
+		"Telecommunications"
+	],
+	"categories_tree": [
+		{
+			"name": "Technology and Electronics",
+			"children": [
+				{
+					"name": "Telecommunications"
+				}
+			]
+		}
+	],
+	"country": "EG",
+	"metas": []
+}
+</pre>
+<p>
+	Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+		<code>https://sandbox.giift.com/api/cart/v1/buy/topup</code>
+	</a>
+</p>
+<p>
+	Content-Type sould be <code>application/json</code>.
+</p>
+<p>
+  The json will be looking like the following example:
+</p>
+<pre>
+{
+  "card":{
+        "dmo":{
+           "id":"underlying_id"
+        }
+        "fields":{
+            "number":"COUNTRYCODENUMBER" // No + no space + No ()
+        }
+    },
+    "amt":"Value to be topup",
+    "ccy":"aed",
+    "metadatas":{
+    	"receipt_id":"RECEIPT-NUMBER",
+    	"operator_id":"OPERATOR ID"
+    },
+    "delivery_data_notification_url":"https://delivery_data_notification_url_you_provided.com"
+}
+</pre>
+<p>
+	In giift.com system, the topup will be deliver asynchronously. In the first case, the card details will be returned in the response body as followed:
+</p>
+<pre>
+{
+    "orderId": "ORDER_ID",
+    "cards": [
+        {
+            "id": "CARD_ID",
+            "dmo_id": "DMO_ID",
+            "user": null,
+            "status": "135024633118xiinl",
+            "status_name": "usable",
+            "fields": {
+                "value": 0,
+                "number": "USER ACCOUNT CARD NUMBER"
+            },
+            "created_at": #UNIX_TIMESTAMP#,
+            "updated_at": #UNIX_TIMESTAMP#
+        }
+    ]
+}
+</pre>
+<p>You should save the order id for later when Giift.com will post on the 'delivery_data_notification_url'
+</p>
+<p>
+	If you are passing a proper url in the field delivery_data_notification_url, the system will POST the delivery details, including the card details (card number, PIN, expiry), for you to use in your system.
+	Here is the format of the delivey object:
+</p>
+<pre>
+{
+		"Id": "#DELIVERY_ID#",
+		"Provider": "gtopup",
+		"Status": "delivered",
+		"Info": "info_data",
+		"OrderId": "#ORDER_ID#",
+		"CreatedAt": "YYY-MM-DDTHH:MM:SSZ",
+		"UpdatedAt": "YYY-MM-DDTHH:MM:SSZ",
+		"infos": {
+			"notification_url": "https://delivery_data_notification_url_you_provided.com"
+		}
+}
+</pre>
+<p>
+  Make sure the status of the delivery is 'delivered', it will mean that the request has been properly passed to the telephone company. Each telephone company communicates with his/her user differently (SMS, app notifications etc).
+</p>
+<p>
+	If the delivery status is 'blocked', it means that the system could not process the topup and you can communicate with your user accordingly and refund.
+</p>
+<p>
+  You will use the OrderId to match the notification url with the proper order.
+</p>

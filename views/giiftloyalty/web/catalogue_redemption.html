@@ -1,0 +1,119 @@
+<h1>
+	Redemption
+</h1>
+<h2 id="product_full_page">
+	Product page
+</h2>
+<p>
+  Once you have retrieved your entire list of product, you can display the list on your different applications.
+  The standard procedure is to allow the user to select one product and redirects him/her to another page to display more information about the product.
+</p>
+<p>
+  Perform the post request to the following url to retrieve more details about the product: <a href="http://giift.github.io/api/cart.html#buyable_item__type___id__get" target="_blank">
+		<code>https://sandbox.giift.com/api/cart/v1/buyable/item/card/{id}>
+	</a> A example of response is shown below.
+</p>
+<pre>
+  {
+  "id": "136331780173ogyaw",
+  "type": "card",
+  "name": "My Everyday Fresh Croissant",
+  "img": "https://s3-ap-southeast-1.amazonaws.com/rest-demo1/assets/img/card_tpl/14863688947OB6J.png",
+  "units": [
+    {
+      "min": 10,
+      "max": 10,
+      "step": 0,
+      "type": "fixed",
+      "unit": "usd"
+    },
+    {
+      "min": 25,
+      "max": 25,
+      "step": 0,
+      "type": "fixed",
+      "unit": "usd"
+    },
+    {
+      "min": 50,
+      "max": 50,
+      "step": 0,
+      "type": "fixed",
+      "unit": "usd"
+    },
+    {
+      "min": 100,
+      "max": 100,
+      "step": 0,
+      "type": "fixed",
+      "unit": "usd"
+    }
+  ],
+  "fields": {
+    "fields": {
+      "number": {
+        "label": "",
+        "label_id": "",
+        "label_replace": [],
+        "id": "number",
+        "type": "hidden",
+        "mandatory": false,
+        "value": null,
+        "group": null,
+        "order": 0,
+        "settings": []
+      },
+      "value_choice": {
+        "label": "Choose a value for the egift card",
+        "label_id": "",
+        "label_replace": [],
+        "id": "value_choice",
+        "type": "buttonchoice",
+        "mandatory": false,
+        "value": 10,
+        "group": null,
+        "order": 2,
+        "settings": {
+          "options": {
+            "10": "US$ 10",
+            "25": "US$ 25",
+            "50": "US$ 50",
+            "100": "US$ 100"
+          },
+          "validation": {
+            "expecting": [
+              10,
+              25,
+              50,
+              100
+            ]
+          }
+        }
+      },
+      "qty": {
+        "label": "",
+        "label_id": "",
+        "label_replace": [],
+        "id": "qty",
+        "type": "hidden",
+        "mandatory": true,
+        "value": 10,
+        "group": null,
+        "order": 3,
+        "settings": []
+      }
+    },
+    "groups": [],
+    "settings": []
+  },
+  "bonus": null,
+  "fees": null,
+  "tc": "<h1 class=\"font_7\">My Everyday Fresh Croissant&nbsp;Terms and Conditions</h1>\n<p class=\"font_7 font_7\">&nbsp;</p>\n<p class=\"font_8\"><strong>1. Participating Venues / Redemption:</strong>&nbsp;Sample Merchant eGift Cards are redeemable at Sample Merchant</p>\n<p>&nbsp;</p>\n<p class=\"font_8\"><strong>2. General Terms:</strong>&nbsp;Sample Merchant eGift Cards are distributed by Gift Management, Inc., a Delaware corporation (\"Giift.com\"). By registering on Giift.com,&nbsp;you are accepting the terms and conditions.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>3. Fees:</strong>&nbsp;No fees of any kind will be charged to the purchasers or recipients of Sample Merchant&nbsp;eGift Cards.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>4. Balance:</strong>&nbsp;To view your eGift Card balance, login to your Giift.com account and follow the instructions.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>5. Returns:</strong>&nbsp;All purchases are final. No refunds will be provided.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>6. Lost or Stolen eGift Cards:</strong>&nbsp;If you suspect that someone has copied or stolen your eGift Card, contact Giift.com&nbsp;<a href=\"../../../en/contact_us\">Customer Support</a>&nbsp;immediately.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>7. Privacy Policy:</strong>&nbsp;Vintry Fine Wines eGift Cards are subject to Giift.com's&nbsp;<a href=\"../../../en/privacy\">Privacy Policy</a>.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>8. Payment Methods:</strong>&nbsp;Giift.com accepts&nbsp;VISA, MasterCard, Discover, American Express, or PayPal as a method of payment to purchase eGift Cards.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>9. Delivery Information:</strong>&nbsp;eGift Cards will be sent instantly and will be loaded on your Giift.com account. You will be able to print or redeem online the eGift Card once connected to your Giift.com account.</p>\n<p class=\"font_8\">If you have not received confirmation that the eGift Card was sent, please contact&nbsp;<a href=\"../../../en/contact_us\">Customer Support</a>. Please refer to your order number, or be ready to supply your email address.&nbsp;We are not responsible for eGift Cards that are undeliverable or not received due to your failure to enter an accurate email address for the recipient.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\">Following is a list of the most common reasons why delivery may have failed:</p>\n<p class=\"font_8\">&nbsp;</p>\n<ul class=\"font_8\">\n<li>\n<p class=\"font_8\">Spam filter blocked email or routed it to a bulk/spam folder</p>\n</li>\n<li>\n<p class=\"font_8\">Recipient's firewall blocked the email</p>\n</li>\n<li>\n<p class=\"font_8\">Email inbox is over size limit</p>\n</li>\n<li>\n<p class=\"font_8\">Invalid email address</p>\n</li>\n</ul>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>10. Personalized Messaging:</strong>&nbsp;Personal messages are limited in length to the space provided on the eGift Card.&nbsp;There is no additional charge to include a personalized message.&nbsp;We don't read every gift message, but if we do find inappropriate, offensive or otherwise objectionable messages, we reserve the right to cancel them.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>11. Uploaded Images:</strong>&nbsp;You may upload your own image for display on an eGift Card.&nbsp;There is no additional charge to include your own image.&nbsp;We reserve the right to replace inappropriate, offensive, or otherwise objectionable images.&nbsp;We reserve the right to replace images that infringe upon trademark or copyright law.&nbsp;</p>\n<p class=\"clear            font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>12.&nbsp;Limitation of Liability:</strong>&nbsp;Sample Merchant eGift Cards are subject to Giift.com policies and warranties. By creating an account on Giift.com, you do accept the term and conditions in respect to liabilities and warranties.</p>\n<p class=\"font_8\">&nbsp;</p>\n<p class=\"font_8\"><strong>13. Disputes:</strong>&nbsp;You hereby consent that any dispute relating in any way to Sample Merchant&nbsp;eGift Cards shall be adjudicated in New York State.</p>\n<p class=\"font_7\">&nbsp;</p>\n<p class=\"font_7\">Sample Merchant&nbsp;eGift Card, powered by Giift.com.</p>"
+}
+</pre>
+<h2 id="product_redemption">
+	Product page
+</h2>
+<p>
+  Once your customer knows which product he/she wants, you can purchase the product using Giift.com purchase capabilities. If your product is a card, have a look in the section <a href="http://giift.github.io/#!/giiftloyalty/web/buy" anchor-scroll="express" target="_self">Buy a gift Card</a>.
+</p>

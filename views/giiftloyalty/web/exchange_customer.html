@@ -1,0 +1,90 @@
+<h1>Exchange merchant units from the client's application point of view</h1>
+<h2>Architecture</h2>
+The typical exchange process is as follow:
+<ol>
+  <li>Client sends exchange request from merchant A to merchant B.</li>
+  <li>Giift.com clears merchant A units (miles, points, $, ...).</li>
+  <li>Giift.com buys merchant B units (miles, points, $, ...).</li>
+  <li>Giift.com forwards merchant B units to the client application.</li>
+</ol>
+<img src="images/conversion_architecture.png" class="img-responsive"/>
+<p>This documentation covers steps 1. and 4. For step 2. and 3. have a look <a href="#!/giiftloyalty/web/exchange_parties">here</a>.</p>
+<p>Giift.com might need to confirm a lot of information from the user to perform an exchange: number of units to be converted, account number, credit card information, ...</p>
+<p>For this, the user will follow a workflow of screens. And step 1. and 4. might be repeted a few times</p>
+<img src="images/exchange_activity_diagram.png" class="img-responsive"/>
+<h3>Init</h3>
+<p>So, the first time a client initializes an exchange, it will do a GET request to the method <a href="https://doc.giift.com/?urls.primaryName=Exchange" target="_blank">order/init</a>. This method requires two parameters:</p>
+<table  class="table table-bordered">
+		<tr>
+			<th>
+				Parameter
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>exchange_id</code>
+			</td>
+			<td>
+				Id of the exchange to be performed. The list of exchanges can be obtained by a query to <a href="https://doc.giift.com/?urls.primaryName=Exchange" target="_blank">
+					<code>https://sandbox.giift.com/api/exchange/v1/exchange/all</code>.
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>card_id</code>
+			</td>
+			<td>
+				Id of the card to be exchanged.
+			</td>
+		</tr>
+    </table>
+    If relevant, the id of the target card will be specified during one of the calls to step.
+<p>The response will contain the following elements:</p>
+	<table  class="table table-bordered">
+		<tr>
+			<th>
+				Parameter
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>orderId</code>
+			</td>
+			<td>
+				Important for tracking the exchange in the future. Especially for the calls to the method step.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>type</code>
+			</td>
+			<td>
+				Tells the client what to do. It can be <code>wf</code> or <code>uri</code>.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>screen</code>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				<code>updates</code>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><code>uri</code></td>
+			<td>Only present if type==uri.</td>
+		</tr>
+    </table>
+<h3>Step</h3>
+<p><b>Coming soon.</b> If you need it urgently, please <a href="mailto:development@giift.com">contact us</a>.</p>

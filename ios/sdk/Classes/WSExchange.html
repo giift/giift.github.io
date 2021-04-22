@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WSExchange Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">giift </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">giift.com</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/exchangeOrderInitWithCardId:exchangeId:completion:">+ exchangeOrderInitWithCardId:exchangeId:completion:</option>
+		
+		<option value="//api/name/exchangeOrderItem:completion:">+ exchangeOrderItem:completion:</option>
+		
+		<option value="//api/name/exchangeOrderResumeWithOrderId:completion:">+ exchangeOrderResumeWithOrderId:completion:</option>
+		
+		<option value="//api/name/exchangeOrderStepWithOrderId:action:completion:">+ exchangeOrderStepWithOrderId:action:completion:</option>
+		
+		<option value="//api/name/findExchange:completion:">+ findExchange:completion:</option>
+		
+		<option value="//api/name/getExchangeItemWithID:completion:">+ getExchangeItemWithID:completion:</option>
+		
+		<option value="//api/name/getExchangesForDmo:completion:">+ getExchangesForDmo:completion:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WSExchange Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WSExchange.h<br />WSExchange.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/findExchange:completion:" title="findExchange:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findExchange:completion:">+&nbsp;findExchange:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>exchange/all/{date}</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)findExchange:(NSString *)<em>exchange</em> completion:(void ( ^ ) ( BOOL success , id exchanges , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>exchange/all/{date}</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WSExchange.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getExchangeItemWithID:completion:" title="getExchangeItemWithID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getExchangeItemWithID:completion:">+&nbsp;getExchangeItemWithID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>exchange/find</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)getExchangeItemWithID:(NSString *)<em>exchangeId</em> completion:(void ( ^ ) ( BOOL success , id exchanges , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>exchange/find</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WSExchange.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getExchangesForDmo:completion:" title="getExchangesForDmo:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getExchangesForDmo:completion:">+&nbsp;getExchangesForDmo:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>exchange/item/{exchange_id}</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)getExchangesForDmo:(NSString *)<em>dmoId</em> completion:(void ( ^ ) ( BOOL success , id exchanges , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>exchange/item/{exchange_id}</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WSExchange.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/exchangeOrderItem:completion:" title="exchangeOrderItem:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exchangeOrderItem:completion:">+&nbsp;exchangeOrderItem:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>order/all/{date}</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)exchangeOrderItem:(NSString *)<em>orderId</em> completion:(void ( ^ ) ( BOOL success , id item , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>order/all/{date}</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WSExchange.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exchangeOrderInitWithCardId:exchangeId:completion:" title="exchangeOrderInitWithCardId:exchangeId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exchangeOrderInitWithCardId:exchangeId:completion:">+&nbsp;exchangeOrderInitWithCardId:exchangeId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>order/item/{order_id}</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)exchangeOrderInitWithCardId:(NSString *)<em>cardId</em> exchangeId:(NSString *)<em>exchangeId</em> completion:(void ( ^ ) ( BOOL success , id object , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>order/item/{order_id}</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WSExchange.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exchangeOrderStepWithOrderId:action:completion:" title="exchangeOrderStepWithOrderId:action:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exchangeOrderStepWithOrderId:action:completion:">+&nbsp;exchangeOrderStepWithOrderId:action:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>order/init/{card_id}/{exchange_id}</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)exchangeOrderStepWithOrderId:(NSString *)<em>orderId</em> action:(NSString *)<em>action</em> completion:(void ( ^ ) ( BOOL success , id item , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>order/init/{card_id}/{exchange_id}</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WSExchange.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/exchangeOrderResumeWithOrderId:completion:" title="exchangeOrderResumeWithOrderId:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/exchangeOrderResumeWithOrderId:completion:">+&nbsp;exchangeOrderResumeWithOrderId:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>order/step/{order_id}/{action}</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)exchangeOrderResumeWithOrderId:(NSString *)<em>orderId</em> completion:(void ( ^ ) ( BOOL success , id item , NSError *error ))<em>completionBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>order/step/{order_id}/{action}</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WSExchange.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 giift.com. All rights reserved. Updated: 2017-11-08</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

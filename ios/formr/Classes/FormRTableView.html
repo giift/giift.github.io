@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>FormRTableView Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Formr </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Giift.com</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/cellDateFormatter">cellDateFormatter</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/displayedLabelAndValue">displayedLabelAndValue</option>
+		
+		<option value="//api/name/fieldDictionary">fieldDictionary</option>
+		
+		<option value="//api/name/httpClient">httpClient</option>
+		
+		<option value="//api/name/list">list</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/calculateTextSize:fontSize:screenWidth:">- calculateTextSize:fontSize:screenWidth:</option>
+		
+		<option value="//api/name/callbackDelete:">- callbackDelete:</option>
+		
+		<option value="//api/name/callbackInsert:">- callbackInsert:</option>
+		
+		<option value="//api/name/callbackUpdate:">- callbackUpdate:</option>
+		
+		<option value="//api/name/dealloc">- dealloc</option>
+		
+		<option value="//api/name/didReceiveMemoryWarning">- didReceiveMemoryWarning</option>
+		
+		<option value="//api/name/fetchFormLabel">- fetchFormLabel</option>
+		
+		<option value="//api/name/formParameters">- formParameters</option>
+		
+		<option value="//api/name/formRErrorForwarder:">- formRErrorForwarder:</option>
+		
+		<option value="//api/name/formRFieldUpdateCallback:">- formRFieldUpdateCallback:</option>
+		
+		<option value="//api/name/getCurrentResponderTag">- getCurrentResponderTag</option>
+		
+		<option value="//api/name/getDisplayedLabelAndValue">- getDisplayedLabelAndValue</option>
+		
+		<option value="//api/name/getForm">- getForm</option>
+		
+		<option value="//api/name/json">- json</option>
+		
+		<option value="//api/name/keyboardDidHide:">- keyboardDidHide:</option>
+		
+		<option value="//api/name/makeCell:field:tag:class:">- makeCell:field:tag:class:</option>
+		
+		<option value="//api/name/makeKeyboardToolbar">- makeKeyboardToolbar</option>
+		
+		<option value="//api/name/map:">- map:</option>
+		
+		<option value="//api/name/numberOfSectionsInTableView:">- numberOfSectionsInTableView:</option>
+		
+		<option value="//api/name/observeValueForKeyPath:ofObject:change:context:">- observeValueForKeyPath:ofObject:change:context:</option>
+		
+		<option value="//api/name/performFormValidation">- performFormValidation</option>
+		
+		<option value="//api/name/reloadTableViewUpdateFrame:">- reloadTableViewUpdateFrame:</option>
+		
+		<option value="//api/name/scanBarcodeCancel">- scanBarcodeCancel</option>
+		
+		<option value="//api/name/scanBarcodeError:">- scanBarcodeError:</option>
+		
+		<option value="//api/name/scanBarcodeSuccess:">- scanBarcodeSuccess:</option>
+		
+		<option value="//api/name/scanCardCancel">- scanCardCancel</option>
+		
+		<option value="//api/name/scanCardSuccess:">- scanCardSuccess:</option>
+		
+		<option value="//api/name/scrollViewWillBeginDragging:">- scrollViewWillBeginDragging:</option>
+		
+		<option value="//api/name/setJson:">- setJson:</option>
+		
+		<option value="//api/name/sortFieldsIndex:">- sortFieldsIndex:</option>
+		
+		<option value="//api/name/tableView:cellForRowAtIndexPath:">- tableView:cellForRowAtIndexPath:</option>
+		
+		<option value="//api/name/tableView:didSelectRowAtIndexPath:">- tableView:didSelectRowAtIndexPath:</option>
+		
+		<option value="//api/name/tableView:heightForRowAtIndexPath:">- tableView:heightForRowAtIndexPath:</option>
+		
+		<option value="//api/name/tableView:numberOfRowsInSection:">- tableView:numberOfRowsInSection:</option>
+		
+		<option value="//api/name/tableViewSize">- tableViewSize</option>
+		
+		<option value="//api/name/tapBarcodeCamera:">- tapBarcodeCamera:</option>
+		
+		<option value="//api/name/tapCardNumberCamera:">- tapCardNumberCamera:</option>
+		
+		<option value="//api/name/tapTextFieldShouldReturn:">- tapTextFieldShouldReturn:</option>
+		
+		<option value="//api/name/textFieldDone:">- textFieldDone:</option>
+		
+		<option value="//api/name/textFieldNext:">- textFieldNext:</option>
+		
+		<option value="//api/name/textFieldPrev:">- textFieldPrev:</option>
+		
+		<option value="//api/name/topViewController">- topViewController</option>
+		
+		<option value="//api/name/topViewControllerWithRootViewController:">- topViewControllerWithRootViewController:</option>
+		
+		<option value="//api/name/updateCellDisplay:formRCellDropdown:">- updateCellDisplay:formRCellDropdown:</option>
+		
+		<option value="//api/name/updateFormParameters">- updateFormParameters</option>
+		
+		<option value="//api/name/updatingSlider">- updatingSlider</option>
+		
+		<option value="//api/name/validateFormR">- validateFormR</option>
+		
+		<option value="//api/name/viewDidLoad">- viewDidLoad</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">FormRTableView Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>UITableViewController</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>FormRTableView.h<br />FormRTableView.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/viewDidLoad" title="viewDidLoad"></a>
+	<h3 class="method-title"><code><a href="#//api/name/viewDidLoad">&ndash;&nbsp;viewDidLoad</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)viewDidLoad</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/map:" title="map:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/map:">&ndash;&nbsp;map:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)map:(NSDictionary *)<em>mapjson</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didReceiveMemoryWarning" title="didReceiveMemoryWarning"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveMemoryWarning">&ndash;&nbsp;didReceiveMemoryWarning</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveMemoryWarning</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dealloc" title="dealloc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dealloc">&ndash;&nbsp;dealloc</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)dealloc</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setJson:" title="setJson:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setJson:">&ndash;&nbsp;setJson:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setJson:(NSDictionary *)<em>newjson</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/json" title="json"></a>
+	<h3 class="method-title"><code><a href="#//api/name/json">&ndash;&nbsp;json</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the json for form construction</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)json</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">FormRTableView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validateFormR" title="validateFormR"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validateFormR">&ndash;&nbsp;validateFormR</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Validate the status of the form</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)validateFormR</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL status</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Validate fields set mandatory</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">FormRTableView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/formParameters" title="formParameters"></a>
+	<h3 class="method-title"><code><a href="#//api/name/formParameters">&ndash;&nbsp;formParameters</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the form&rsquo;s parameters</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)formParameters</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A NSDictionary of the form</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>nil</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">FormRTableView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDisplayedLabelAndValue" title="getDisplayedLabelAndValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDisplayedLabelAndValue">&ndash;&nbsp;getDisplayedLabelAndValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)getDisplayedLabelAndValue</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numberOfSectionsInTableView:" title="numberOfSectionsInTableView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numberOfSectionsInTableView:">&ndash;&nbsp;numberOfSectionsInTableView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)numberOfSectionsInTableView:(UITableView *)<em>tableView</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableView:numberOfRowsInSection:" title="tableView:numberOfRowsInSection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableView:numberOfRowsInSection:">&ndash;&nbsp;tableView:numberOfRowsInSection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)tableView:(UITableView *)<em>tableView</em> numberOfRowsInSection:(NSInteger)<em>section</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableView:cellForRowAtIndexPath:" title="tableView:cellForRowAtIndexPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableView:cellForRowAtIndexPath:">&ndash;&nbsp;tableView:cellForRowAtIndexPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (UITableViewCell *)tableView:(UITableView *)<em>tableView</em> cellForRowAtIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableView:heightForRowAtIndexPath:" title="tableView:heightForRowAtIndexPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableView:heightForRowAtIndexPath:">&ndash;&nbsp;tableView:heightForRowAtIndexPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGFloat)tableView:(UITableView *)<em>tableView</em> heightForRowAtIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableView:didSelectRowAtIndexPath:" title="tableView:didSelectRowAtIndexPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableView:didSelectRowAtIndexPath:">&ndash;&nbsp;tableView:didSelectRowAtIndexPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)tableView:(UITableView *)<em>tableView</em> didSelectRowAtIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updatingSlider" title="updatingSlider"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updatingSlider">&ndash;&nbsp;updatingSlider</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updatingSlider</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getForm" title="getForm"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getForm">&ndash;&nbsp;getForm</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)getForm</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tapTextFieldShouldReturn:" title="tapTextFieldShouldReturn:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tapTextFieldShouldReturn:">&ndash;&nbsp;tapTextFieldShouldReturn:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)tapTextFieldShouldReturn:(UITextField *)<em>textField</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/formRFieldUpdateCallback:" title="formRFieldUpdateCallback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/formRFieldUpdateCallback:">&ndash;&nbsp;formRFieldUpdateCallback:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)formRFieldUpdateCallback:(FormRCallbackResponse *)<em>callbackDictionary</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/callbackUpdate:" title="callbackUpdate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/callbackUpdate:">&ndash;&nbsp;callbackUpdate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)callbackUpdate:(NSArray *)<em>updateObjects</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/callbackInsert:" title="callbackInsert:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/callbackInsert:">&ndash;&nbsp;callbackInsert:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)callbackInsert:(NSArray *)<em>insertObjects</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/callbackDelete:" title="callbackDelete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/callbackDelete:">&ndash;&nbsp;callbackDelete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)callbackDelete:(NSArray *)<em>deleteObjects</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateCellDisplay:formRCellDropdown:" title="updateCellDisplay:formRCellDropdown:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateCellDisplay:formRCellDropdown:">&ndash;&nbsp;updateCellDisplay:formRCellDropdown:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)updateCellDisplay:(NSString *)<em>updatedSelection</em> formRCellDropdown:(FormRCellDropdown *)<em>cellTarget</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tapBarcodeCamera:" title="tapBarcodeCamera:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tapBarcodeCamera:">&ndash;&nbsp;tapBarcodeCamera:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)tapBarcodeCamera:(id)<em>scanController</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanBarcodeCancel" title="scanBarcodeCancel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanBarcodeCancel">&ndash;&nbsp;scanBarcodeCancel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)scanBarcodeCancel</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanBarcodeSuccess:" title="scanBarcodeSuccess:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanBarcodeSuccess:">&ndash;&nbsp;scanBarcodeSuccess:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)scanBarcodeSuccess:(NSString *)<em>info</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanBarcodeError:" title="scanBarcodeError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanBarcodeError:">&ndash;&nbsp;scanBarcodeError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)scanBarcodeError:(NSError *)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tapCardNumberCamera:" title="tapCardNumberCamera:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tapCardNumberCamera:">&ndash;&nbsp;tapCardNumberCamera:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)tapCardNumberCamera:(id)<em>scanController</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanCardCancel" title="scanCardCancel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanCardCancel">&ndash;&nbsp;scanCardCancel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)scanCardCancel</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scanCardSuccess:" title="scanCardSuccess:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scanCardSuccess:">&ndash;&nbsp;scanCardSuccess:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)scanCardSuccess:(CardIOCreditCardInfo *)<em>info</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/formRErrorForwarder:" title="formRErrorForwarder:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/formRErrorForwarder:">&ndash;&nbsp;formRErrorForwarder:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)formRErrorForwarder:(NSError *)<em>error</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/makeCell:field:tag:class:" title="makeCell:field:tag:class:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/makeCell:field:tag:class:">&ndash;&nbsp;makeCell:field:tag:class:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)makeCell:(id)<em>cell</em> field:(FormRField *)<em>field</em> tag:(int)<em>tag</em> class:(id)<em>class</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sortFieldsIndex:" title="sortFieldsIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sortFieldsIndex:">&ndash;&nbsp;sortFieldsIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)sortFieldsIndex:(NSDictionary *)<em>fields</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getCurrentResponderTag" title="getCurrentResponderTag"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getCurrentResponderTag">&ndash;&nbsp;getCurrentResponderTag</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)getCurrentResponderTag</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/calculateTextSize:fontSize:screenWidth:" title="calculateTextSize:fontSize:screenWidth:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/calculateTextSize:fontSize:screenWidth:">&ndash;&nbsp;calculateTextSize:fontSize:screenWidth:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGSize)calculateTextSize:(NSString *)<em>message</em> fontSize:(UIFont *)<em>font</em> screenWidth:(CGFloat)<em>width</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateFormParameters" title="updateFormParameters"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateFormParameters">&ndash;&nbsp;updateFormParameters</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)updateFormParameters</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchFormLabel" title="fetchFormLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchFormLabel">&ndash;&nbsp;fetchFormLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)fetchFormLabel</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performFormValidation" title="performFormValidation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performFormValidation">&ndash;&nbsp;performFormValidation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)performFormValidation</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tableViewSize" title="tableViewSize"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tableViewSize">&ndash;&nbsp;tableViewSize</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (CGSize)tableViewSize</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/topViewController" title="topViewController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/topViewController">&ndash;&nbsp;topViewController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (UIViewController *)topViewController</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/topViewControllerWithRootViewController:" title="topViewControllerWithRootViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/topViewControllerWithRootViewController:">&ndash;&nbsp;topViewControllerWithRootViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (UIViewController *)topViewControllerWithRootViewController:(UIViewController *)<em>rootViewController</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reloadTableViewUpdateFrame:" title="reloadTableViewUpdateFrame:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reloadTableViewUpdateFrame:">&ndash;&nbsp;reloadTableViewUpdateFrame:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)reloadTableViewUpdateFrame:(BOOL)<em>resetFrame</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/makeKeyboardToolbar" title="makeKeyboardToolbar"></a>
+	<h3 class="method-title"><code><a href="#//api/name/makeKeyboardToolbar">&ndash;&nbsp;makeKeyboardToolbar</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (UIToolbar *)makeKeyboardToolbar</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scrollViewWillBeginDragging:" title="scrollViewWillBeginDragging:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scrollViewWillBeginDragging:">&ndash;&nbsp;scrollViewWillBeginDragging:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)scrollViewWillBeginDragging:(UIScrollView *)<em>scrollView</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textFieldDone:" title="textFieldDone:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textFieldDone:">&ndash;&nbsp;textFieldDone:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)textFieldDone:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textFieldPrev:" title="textFieldPrev:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textFieldPrev:">&ndash;&nbsp;textFieldPrev:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)textFieldPrev:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textFieldNext:" title="textFieldNext:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textFieldNext:">&ndash;&nbsp;textFieldNext:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)textFieldNext:(id)<em>sender</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/keyboardDidHide:" title="keyboardDidHide:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keyboardDidHide:">&ndash;&nbsp;keyboardDidHide:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)keyboardDidHide:(NSNotification *)<em>notification</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/observeValueForKeyPath:ofObject:change:context:" title="observeValueForKeyPath:ofObject:change:context:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/observeValueForKeyPath:ofObject:change:context:">&ndash;&nbsp;observeValueForKeyPath:ofObject:change:context:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)observeValueForKeyPath:(NSString *)<em>keyPath</em> ofObject:(id)<em>object</em> change:(NSDictionary *)<em>change</em> context:(void *)<em>context</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/displayedLabelAndValue" title="displayedLabelAndValue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/displayedLabelAndValue">&nbsp;&nbsp;displayedLabelAndValue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the form&rsquo;s display label and values</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, getter=getDisplayedLabelAndValue, readonly, copy) NSDictionary *displayedLabelAndValue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A NSDictionary of the form&rsquo;s label and values</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">FormRTableView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cellDateFormatter" title="cellDateFormatter"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cellDateFormatter">&nbsp;&nbsp;cellDateFormatter</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the cell date format, default: @&ldquo;MMM dd, yyyy&rdquo;</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSDateFormatter *cellDateFormatter</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">FormRTableView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delegate for <a href="../Protocols/FormRTableViewDelegate.html">FormRTableViewDelegate</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (weak, nonatomic) id&lt;FormRTableViewDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">FormRTableView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/httpClient" title="httpClient"></a>
+	<h3 class="method-title"><code><a href="#//api/name/httpClient">&nbsp;&nbsp;httpClient</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the instance of AFNetworking for Http Client, if not set, FormR-SDK will create a new instance and perform the callback</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) id httpClient</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">FormRTableView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/fieldDictionary" title="fieldDictionary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fieldDictionary">&nbsp;&nbsp;fieldDictionary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSMutableDictionary *fieldDictionary</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/list" title="list"></a>
+	<h3 class="method-title"><code><a href="#//api/name/list">&nbsp;&nbsp;list</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) List *list</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Giift.com. All rights reserved. Updated: 2017-11-09</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['fromjson',['FromJson',['../class_giift_a_p_i_c_sharp_1_1_activation_details.html#abdd25b35a564ad4a01f0932102303e39',1,'GiiftAPICSharp.ActivationDetails.FromJson()'],['../class_giift_a_p_i_c_sharp_1_1_card_details.html#a5660bd7c1e94ef1c631189c31232f640',1,'GiiftAPICSharp.CardDetails.FromJson()'],['../class_giift_a_p_i_c_sharp_1_1_token.html#abfbcfd0417479655fecd80c7f1c3285d',1,'GiiftAPICSharp.Token.FromJson()'],['../class_giift_a_p_i_c_sharp_1_1_transaction_details.html#a58cdd48707822d0f8d43d67942635e5b',1,'GiiftAPICSharp.TransactionDetails.FromJson()'],['../class_giift_a_p_i_c_sharp_1_1_user_creation_details.html#abe2abcceb4d98d3839288d1013c77d65',1,'GiiftAPICSharp.UserCreationDetails.FromJson()'],['../class_giift_a_p_i_c_sharp_1_1_user_look_up_details.html#a0c7b1fdbdf0f59bdc6e2743ec1994219',1,'GiiftAPICSharp.UserLookUpDetails.FromJson()']]],
+  ['fromjsonarray',['FromJsonArray',['../class_giift_a_p_i_c_sharp_1_1_card_details.html#aafd3970ef08a42122c7bec0c776c2e8d',1,'GiiftAPICSharp::CardDetails']]]
+];

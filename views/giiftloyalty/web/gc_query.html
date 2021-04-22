@@ -1,0 +1,33 @@
+<h1>Querying a gift card</h1>
+<p>This is the same as what can be found on <a href="#!/giiftloyalty/web/lp_query">the loyalty program</a>.</p>
+<p>The idea behind this call is to retrieve the necessary information on a customer and its loyalty program card.</p>
+<p>Natural subsequent calls are to redeem or to add points to the card.</p>
+<p>Perform a GET request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Card" target="_blank"><code>https://sandbox.giift.com/api/card/v1/lookup</code></a></p>
+<p>This method will return the list of cards matching the query. Unless the query is a card number, the result can be a mix
+	of gift cards and loyalty programs to whom the current user has access.</p>
+<p>Only one string parameter. It can be chosen among the following list:
+	<table class="table table-bordered">
+		<tr>
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>q</code></td>
+			<td>This is a very flexible but slower way of querrying for a loyalty program. The system, will try to solve the query in
+				the following order: card_number, email, phone.</td>
+		</tr>
+		<tr>
+			<td><code>card_number</code></td>
+			<td>The loyalty card number, This is usually a 16 digits number but it can also contain letters and special caracters.</td>
+		</tr>
+		<tr>
+			<td><code>email</code></td>
+			<td>The user's email.</td>
+		</tr>
+		<tr>
+			<td><code>phone</code></td>
+			<td>The user's telephone number.</td>
+		</tr>
+	</table>
+</p>
+<p>Full API reference can be found <a href="https://doc.giift.com/?urls.primaryName=Card" target="_blank">here</a>.</p>

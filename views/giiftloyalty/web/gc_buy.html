@@ -1,0 +1,587 @@
+<h1>
+	Buy a gift Card
+</h1>
+
+There are 2 ways to buy gift cards from Giift.com. The <a href="#" anchor-scroll="express" target="_self">express</a> does everything in a single step. The <a href="#" anchor-scroll="advanced" target="_self">advanced</a>, requires more steps but allows more control.
+<h2 id="express">
+	Express
+</h2>
+<p>
+	Giift.com has 2 ways to deliver a gift card: api or email. You can have Giift.com to send an email with the gift card code to your user for you or you can just get the code back to yourself.
+</p>
+<p>
+	In the near future we will also be able to deliver cards by sms.
+</p>
+<h3>
+	Email
+</h3>
+<p>
+	Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+		<code>https://sandbox.giift.com/api/cart/v1/buy/card</code>
+	</a>
+</p>
+<p>
+	Content-Type sould be either <code>application/x-www-form-urlencoded</code><!-- or <code>application/json</code>-->.</p>
+<p>List of parameters:
+	<table class="table table-bordered">
+		<tr>
+			<th>
+				Parameter
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>dmo_id</code>
+			</td>
+			<td>
+				Id of the program for which to issue a card. The list of programs can be obtained by a query to <a href="http://giift.github.io/#!/giiftloyalty/web/buyable_list" target="_blank">
+					<code>https://sandbox.giift.com/api/cart/v2/buyable/list</code>.
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>amount</code>
+			</td>
+			<td>
+				Face value of the card to be issued.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>state</code>
+			</td>
+			<td>
+				Optional external id that will be visible in the response. Very useful to reconcile with merchant.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>delivery_type</code>
+			</td>
+			<td>
+				String to define the type of delivery: in this case, it must be <code>offer</code>.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>delivery_data_rname</code>
+			</td>
+			<td>
+				Name of the person receiving the card.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>delivery_data_remail</code>
+			</td>
+			<td>
+				Email of the person receiving the card.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>delivery_data_date</code>
+			</td>
+			<td>
+				Date at which the card should be delivered. Default is today. Format is YYYY-MM-DD.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[receipt_id]</code>
+			</td>
+			<td>
+				Internal ID of the system buying the gift card. Very useful for end of month reconiliation between two systems(this metadata is highly recommended).
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[pos_id]</code>
+			</td>
+			<td>
+				If you are generating a card out of a group of machines, you might want to record which one(more appropriate in the API case).
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[branch_id]</code>
+			</td>
+			<td>
+				If a group of shops have access to machine to offer cards, you might want to record from which shop(more appropriate in the API case).
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[operator_id]</code>
+			</td>
+			<td>
+				User ID in the system that triggers the gift card offering(more appropriate in the API case).
+			</td>
+		</tr>
+	</table>
+</p>
+<p>
+	The response body will contain the Giift.com order id that you can must save for reconciliation. See the
+</p>
+<pre>
+{
+    "orderId": "15375229573wA4Q"
+}
+</pre>
+<h3>
+	API
+</h3>
+<p>
+	Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+		<code>https://sandbox.giift.com/api/cart/v1/buy/card</code>
+	</a>
+</p>
+<p>
+	Content-Type sould be either <code>application/x-www-form-urlencoded</code><!-- or <code>application/json</code>-->.
+</p>
+<p>
+	List of parameters:
+	<table  class="table table-bordered">
+		<tr>
+			<th>
+				Parameter
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>dmo_id</code>
+			</td>
+			<td>
+				Id of the program for which to issue a card. The list of programs can be obtained by a query to <a href="http://giift.github.io/#!/giiftloyalty/web/buyable_list" target="_blank">
+					<code>https://sandbox.giift.com/api/cart/v2/buyable/list</code>.
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>delivery_type</code>
+			</td>
+			<td>
+				In that case it must be <code>api</code>.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>amount</code>
+			</td>
+			<td>
+				Face value of the card to be issued.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>state</code>
+			</td>
+			<td>
+				Optional external id that will be visible in the response. Very useful to reconcile with merchant.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>delivery_data_notification_url</code>
+			</td>
+			<td>
+				Giift.com will POST the details of the card to this url.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[receipt_id]</code>
+			</td>
+			<td>
+				Internal ID of the system buying the gift card. Very useful for end of month reconiliation between two systems(this metadata is highly recommended).
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[pos_id]</code>
+			</td>
+			<td>
+				If you are generating a card out of a group of machines, you might want to record which one. Appropriate when the call is made to activate Physical Gift Cards
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[branch_id]</code>
+			</td>
+			<td>
+				If a group of shops have access to machine to offer cards, you might want to record from which shop.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>metadatas[operator_id]</code>
+			</td>
+			<td>
+				User ID in the system that triggers the gift card offering.
+			</td>
+		</tr>
+	</table>
+</p>
+<p>
+	In giift.com system, the gift cards are delivered synchronously or asynchronously. In the first case, the card details will be returned in the response body as followed:
+</p>
+<pre>
+{
+		"orderId": "1537524220pUuSa",
+		"cards": [{
+			"id": "1537524221ToIx2",
+			"dmo_id": "140561330365ttdmv",
+			"user": null,
+			"status": "135024633118xiinl",
+			"status_name": "usable",
+			"fields": {
+				"value": 100,
+				"number": "0158693951068685",
+				"expiration": "2019-09-21",
+				"ccv": "1234"
+			},
+			"created_at": 1537524221,
+			"updated_at": 1537524221
+		}]
+}
+</pre>
+<p>
+	NB: expiration and ccv fields are optional. If the gift card does not expire, this field won't be displayed. Same for the ccv, commonly known as PIN. Not all card have this extra code.
+</p>
+<p>Another case is the one of the gift card whose redemption at the store is done through a specific URL link. In this case, we will pass the link in the field <b>extra_login</b>. If you are delivering the card through your own notification system (email, sms, etc),
+	you must include this link for the user to use. Please review the following example
+</p>
+<pre>
+{
+		"orderId": "1537524220pUuSa",
+		"cards": [{
+			"id": "1537524221ToIx2",
+			"dmo_id": "140561330365ttdmv",
+			"user": null,
+			"status": "135024633118xiinl",
+			"status_name": "usable",
+			"fields": {
+				"value": 100,
+				"number": "0158693951068685",
+				"extra_login": "https://how_to_use_my_gift_card.com/now",
+				"extra_password": ""
+			},
+			"created_at": 1537524221,
+			"updated_at": 1537524221
+		}]
+}
+</pre>
+<p>
+	If the card is delivered asynchronously, the response body will look like that:
+</p>
+<pre>
+{
+		"orderId": "15375248434yGlT",
+		"cards": [{
+			"id": "1537524844mMpFX",
+			"dmo_id": "136331782307opqqg",
+			"user": null,
+			"status": "135024645717xjhzj",
+			"status_name": "suspended",
+			"fields": {
+				"value": 100,
+				"number": "",
+				"ccv": "",
+				"expiration": ""
+			},
+			"created_at": 1537524844,
+			"updated_at": 1537524844
+		}]
+}
+</pre>
+<p>
+	If you are passing a proper url in the field delivery_data_notification_url, the system will POST the delivery details, including the card details (card number, PIN, expiry), for you to use in your system.
+	Here is the format of the delivey object:
+</p>
+
+<pre>
+{
+		"Id": "#DELIVERY_ID#",
+		"Provider": "api",
+		"Status": "delivered",
+		"Info": "info_data",
+		"OrderId": "#ORDER_ID#",
+		"CreatedAt": "YYY-MM-DDTHH:MM:SSZ",
+		"UpdatedAt": "YYY-MM-DDTHH:MM:SSZ",
+		"infos": {
+			"name": "False",
+			"notification_url": "https://delivery_data_notification_url_you_provided.com",
+			"r_email": "False",
+			"delivered": [{
+				"model": "Model_Card",
+				"id": "#CARD_ID#",
+				"item_id": "#ITEM_ID#",
+				"meta": {
+					"id": "1533581334UIqQW",
+					"dmo_id": "#DMO_ID#",
+					"user": null,
+					"status": "135024633118xiinl",
+					"fields": {
+						"value": "#VALUE_OF_THE_CARD",
+						"number": "#CARD_NUMBER",
+						"expiration": "YYYY-MM-DD"
+					},
+					"status_name": "usable",
+					"created_at": "#UNIX_TIMESTAMP#",
+					"updated_at": "#UNIX_TIMESTAMP",
+					"metadata": {
+						"receipt_id": "#YOUR_INTERNAL_ID#"
+					},
+					"tracking_error": null
+				}
+			}],
+			"MSISDN": null
+		},
+		"MSISDN": "00"
+}
+</pre>
+<p>
+	List of possible items in <b>fields</b>:
+	<table  class="table table-bordered">
+		<tr>
+			<th>
+				Field
+			</th>
+			<th>
+				Always present
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<code>number</code>
+			</td>
+			<td>
+				Yes
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>ccv</code>
+			</td>
+			<td>
+				No
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>expiration</code>
+			</td>
+			<td>
+				No
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>extra_login</code>
+			</td>
+			<td>
+				No
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>extra_password</code>
+			</td>
+			<td>
+				No
+			</td>
+		</tr>
+	</table>
+</p>
+<h3>
+	Order Status API
+</h3>
+<p>There is an alternative to notification url process. If you want to run your own order checking mechanism, Giift API has a specific endpoint to check the delivery
+	status of an order: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+		<code>https://sandbox.giift.com/api/cart/v1/order/delivery_status/&lt;order_id&gt;</code></a>
+</p>
+<p>It will return the same structure as the json sent to the notification url:
+	<pre>
+		{
+				"Id": "#DELIVERY_ID#",
+				"Provider": "api",
+				"Status": "delivered",
+				"Info": "info_data",
+				"OrderId": "#ORDER_ID#",
+				"CreatedAt": "YYY-MM-DDTHH:MM:SSZ",
+				"UpdatedAt": "YYY-MM-DDTHH:MM:SSZ",
+				"infos": {
+					"name": "False",
+					"notification_url": "https://delivery_data_notification_url_you_provided.com",
+					"r_email": "False",
+					"delivered": [{
+						"model": "Model_Card",
+						"id": "#CARD_ID#",
+						"item_id": "#ITEM_ID#",
+						"meta": {
+							"id": "1533581334UIqQW",
+							"dmo_id": "#DMO_ID#",
+							"user": null,
+							"status": "135024633118xiinl",
+							"fields": {
+								"value": "#VALUE_OF_THE_CARD",
+								"number": "#CARD_NUMBER",
+								"expiration": "YYYY-MM-DD"
+							},
+							"status_name": "usable",
+							"created_at": "#UNIX_TIMESTAMP#",
+							"updated_at": "#UNIX_TIMESTAMP",
+							"metadata": {
+								"receipt_id": "#YOUR_INTERNAL_ID#"
+							},
+							"tracking_error": null
+						}
+					}],
+					"MSISDN": null
+				},
+				"MSISDN": "00"
+		}
+		</pre>
+</p>
+<p>If the status is <code>"Status": "delivered"</code>, you can retrieve all the vouchers details in the <code>fields</code> part and send the voucher details to your customer. </p>
+<h3>
+	Specific Cases
+</h3>
+<p>Giift Marketplace connects to several providers to offer the most complete voucher/gift card catalog.
+	For most of them, you can use <code>"type":"api"</code> to request a voucher and retrieve the details as previously described. You are then free to communicate with the users using your regular channels (email, sms etc). 
+	Nevertheless, Some card providers request the telephone number of the user to be able to send the voucher details directly to the user without sending back the data to Giift.</p>
+<h4>How to recognise this type of voucher</h4>
+<p>In the buyable description, you will find several fields to help you know the delivery method of the cards.<br>
+	EX:
+	<pre>
+        "account_type": "phone",
+        "external_delivery_type": "SMS"
+	</pre>
+	<code>"account_type": "phone"</code> means that the telephone number is requested.
+	<br><code>"external_delivery_type": "SMS"</code> means that the card will be delivered by SMS to the telephone number.
+	<br>In this case we recommend that you let the user knows that he will be contacted separately by a Thrird Party.
+</p>
+<h4>How to pass the Telephone number</h4>
+<p>List of parameters:
+	<table  class="table table-bordered">
+	<tr>
+		<th>
+			Parameter
+		</th>
+		<th>
+			Description
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<code>dmo_id</code>
+		</td>
+		<td>
+			Id of the program for which to issue a card. The list of programs can be obtained by a query to <a href="http://giift.github.io/#!/giiftloyalty/web/buyable_list" target="_blank">
+				<code>https://sandbox.giift.com/api/cart/v2/buyable/list</code>.
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>delivery_type</code>
+		</td>
+		<td>
+			In that case it must be <code>api</code>.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>r_phone</code>
+		</td>
+		<td>
+			Telephone number of the user. Without it, the order will be placed in a pending status, and later be automatically canceled.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>amount</code>
+		</td>
+		<td>
+			Face value of the card to be issued.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>state</code>
+		</td>
+		<td>
+			Optional external id that will be visible in the response. Very useful to reconcile with merchant.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>delivery_data_notification_url</code>
+		</td>
+		<td>
+			Giift.com will POST the details of the card to this url.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>metadatas[receipt_id]</code>
+		</td>
+		<td>
+			Internal ID of the system buying the gift card. Very useful for end of month reconiliation between two systems(this metadata is highly recommended).
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>metadatas[pos_id]</code>
+		</td>
+		<td>
+			If you are generating a card out of a group of machines, you might want to record which one. Appropriate when the call is made to activate Physical Gift Cards
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>metadatas[branch_id]</code>
+		</td>
+		<td>
+			If a group of shops have access to machine to offer cards, you might want to record from which shop.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>metadatas[operator_id]</code>
+		</td>
+		<td>
+			User ID in the system that triggers the gift card offering.
+		</td>
+	</tr>
+</table></p>
+<h3>
+	Bulk purchase
+</h3>
+<p>
+	This method allows the following :
+	<ul>
+		<li>buying multiple cards at once</li>
+		<li>specifying the card number</li>
+		<li>deliverying the card by email now or at a later date</li>
+	</ul>
+	For those advanced use case, refer to the <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">method documentation</a>.
+</p>
+<h2 id="advanced">
+	Advanced
+</h2>
+<p>
+	Here are the steps that need to be performed to fully buy a card through this process.
+</p>
+<img src="images/cart_workflow_advanced.png"/>
+<p>
+	Coming soon. If you need it urgently, please <a href="mailto:development@giift.com">contact us</a>.
+</p>

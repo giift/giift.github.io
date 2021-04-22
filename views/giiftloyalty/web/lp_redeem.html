@@ -1,0 +1,36 @@
+<h1>Redeem a loyalty program</h1>
+<p>The idea behind the following requests is to debit points from a user loyalty program.</p>
+<p>For each loyalty program, Giift.com stores the dollar value behond each point.</p>
+<p>This dollar value or <strong>ratio</strong> points to cash is saved in Giift.com database in agreement with the merchant.</p>
+<p>In simple words, it defines how much money the merchant is ready to give back to a loyal customer based on the customer's spending amount.</p>
+<p>Perform a POST request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank"><code>https://sandbox.giift.com/api/card/v1/debit</code></a>.</p>
+<p>Content-type sould be <code>application/x-www-form-urlencoded</code><!-- or <code>application/json</code>-->.</p>
+<p>List of parameters:
+	<table class="table table-bordered">
+		<tr>
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><code>card_id</code></td>
+			<td>The loyalty card id. This is not the card number.</td>
+		</tr>
+		<tr>
+			<td><code>amt</code></td>
+			<td>Amount in the program unit to be debited from the card.</td>
+		</tr>
+    <tr>
+			<td><code>type</code></td>
+			<td>One of cash, points(default is points).
+        If cash is chosen, it means you wish to calculate the dollar value behind the points being redeemed. For one program, there could be several ratios (2% cash back, 3% during holidays season).
+        In Giift.com we refer to it as <strong>exchange</strong>. One exchange will bear the explicit ratios between two objects(ex:points program to cash). In this case,
+        you must provide an exchange id. All exchange id can be retrieve using the method <a href="https://doc.giift.com/?urls.primaryName=Exchange" target="_blank"><code>exchange/around</code></a></p>
+        If points is chosen, it means your are just removing points from the card and no exchange_id is necessary.</td>
+		</tr>
+    <tr>
+      <td><code>exchange_id</code></td>
+      <td>To be provided in case of type 'cash'.</td>
+    </tr>
+	</table>
+</p>
+<p>Full API reference can be found <a href="https://doc.giift.com/?urls.primaryName=Card" target="_blank">here</a>.</p>

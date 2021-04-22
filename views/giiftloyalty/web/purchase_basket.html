@@ -1,0 +1,197 @@
+<h1>General Purchase action</h1>
+<h3>Product description</h3>
+<p>Giift.com API uses the same representation for all the products (gift cards or physical goods) that can be bought through the API. We call these objects buyables.</p>
+<pre>
+  {
+    "underlying_id": "1485989440r3FxX",
+    "type": "card",
+    "name": "Wonderful gift card",
+    "imgs": [
+        "https://www.giift.com/assets/img/card_tpl/14212957783rbXU.png"
+    ],
+    "units": [
+        {
+            "unit": "usd",
+            "type": "fixed",
+            "value": 10,
+            "price": 10
+        },
+        {
+            "unit": "usd",
+            "type": "fixed",
+            "value": 25,
+            "price": 25
+        },
+        {
+            "unit": "usd",
+            "type": "fixed",
+            "value": 50,
+            "price": 50
+        },
+        {
+            "unit": "usd",
+            "type": "fixed",
+            "value": 100,
+            "price": 100
+        },
+        {
+            "unitPrice": 1,
+            "step": 0,
+            "unit": "usd",
+            "min": 10,
+            "type": "variable",
+            "max": 500
+        }
+    ],
+    "bonus": null,
+    "fees": null,
+    "tc": "These are the terms and conditions of the gift card you are about to purchase.",
+    "description": "With the Wonderful Gift Card, you can buy plenty of amazing things. Within our vastely large network of retailers",
+    "country": "US",
+    "categories": [
+        "Grocery",
+        "Food and Drinks"
+    ]
+}
+</pre>
+<p>In the previous example, we can find 2 types of useful information.</p>
+<p>The first one is some general information about the card:
+ <li>Product ID. It is the Giift.com internal ID.</li>
+  <li>Product description</li>
+  <li>T&Cs</li>
+  <li>Country of the product.</li>
+  <li>Product Categories</li>
+</p>
+<p>The second one is the condition of payment. For a product, it is stragith forward, it is the price of the product alons with the currency. For example, a product of 88.5 USD will be described as:</p>
+<pre>
+  {
+      "value": 88.5,
+      "type": "fixed",
+      "unit": "usd"
+  }
+</pre>
+<p>For a gift card, it can be bought either in a list of specific denominations (10$, 25$ etc) or a series of amount between two values.</p>
+<p>For example, every 5$ between 10$ and 500$:</p>
+<pre>
+  {
+      "min": 10,
+      "max": 500,
+      "step": 5,
+      "type": "variable",
+      "unit": "usd"
+  }
+</pre>
+<p>Here is a simple example for a physical product:</p>
+<pre>
+  {
+    "underlying_id": "1481132440r3ZZZ",
+    "type": "product",
+    "name": "Sublime earphone",
+    "imgs": [
+        "https://www.giift.com/assets/img/card_tpl/14212957783rbXU.png"
+    ],
+    "units": [
+        {
+            "value": 88.5,
+            "type": "fixed",
+            "unit": "usd"
+        }
+    ],
+    "bonus": null,
+    "fees": null,
+    "tc": "This purchase is not refundable.",
+    "description": "With these Sublime earphones, you will listen to music.",
+    "country": "US",
+    "categories": [
+        "Computer and Electronics"
+    ]
+}
+</pre>
+<br/>
+<h3>Building a basket</h3>
+<p>For a direct purchase of one Gift Card, please refer to the <a href="http://giift.github.io/#!/giiftloyalty/web/gc_buy.html" anchor-scroll="express" target="_self">express</a> documentation. </p>
+<p>Now that we have a better undesrtanding of a product in Giift.com, we can start to purchase one or several objects.</p>
+<p>The general diagram is presented below along with the corresponding API calls:</p>
+<img src="images/cart_workflow_advanced.png"/>
+<h4>Create the cart object</h4>
+<p>This is the first action to be performed. The cart object will hold all the products you want to purchase.</p>
+<p>Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+  <code>https://sandbox.giift.com/api/cart/v1/cart/new [GET]</code>
+</a></p>
+<h4>Add items into your cart</h4>
+<p>Now that you have a cart, you can add as many items as you want in your cart. For each item you will need:</p>
+<table  class="table table-bordered">
+  <tr>
+    <th>
+      Parameter
+    </th>
+    <th>
+      Description
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>Buyable ID</code>
+    </td>
+    <td>
+      Id of the card or product you want to purchase. It is called underlying_id in the buyable schema presented above.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>Buyable Type</code>
+    </td>
+    <td>
+      The type of buyable: product, card or topup.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>ccy</code>
+    </td>
+    <td>
+      Currency in which you want to purchase the buyable.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>qty</code>
+    </td>
+    <td>
+      How many of this product or card you want to purchase?
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>cart_id</code>
+    </td>
+    <td>
+      Provide the cart_id. It is the id of the cart you want to put your product in.
+    </td>
+  </tr>
+</table>
+<p>Complete documentation on this call can be found here: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+  <code>https://sandbox.giift.com/api/cart/v1/item/item [POST]</code>
+</a></p>
+<h4>Create an official order</h4>
+<p>Once you are finished looping on all the items you want to add in your cart, make it official and create an order.</p>
+<p>Perform a request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+  <code>https://sandbox.giift.com/api/cart/v1/cart/order/{cart_id} [GET]</code>
+</a></p>
+<p>It is now too late to add item in your cart but you are ready for the next steps.</p>
+<h4>How to deliver all your items?</h4>
+<p>Each item is different and can be delivered using specific methods (email, sms, mail etc). Loop on all your items and get the list of delivery method available for each item.</p>
+<h4>How to pay for your order?</h4>
+<p>You can retrieve the different ways of paying for your order by performing a request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+  <code>https://sandbox.giift.com/api/cart/v1/order/available_payment_providers/{order_id} [GET]</code>
+</a></p>
+<h4>Select a payment method</h4>
+<p>Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+  <code>https://sandbox.giift.com/api/cart/v1/order/payment/{order_id} [POST]</code>
+</a></p>
+<p>This call will initialize a payment process and return a payment id.</p>
+<h4>Submit a payment</h4>
+<p>Perform a post request to the following url: <a href="https://doc.giift.com/?urls.primaryName=Cart" target="_blank">
+  <code>https://sandbox.giift.com/api/cart/v1/payment/pay/{payment_id} [POST]</code>
+</a></p>
+<p>This call will submit the payment using the id previously obtained.</p>
